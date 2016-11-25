@@ -1,0 +1,406 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- 2.2 Page Tab / .main-tab --*/
+
+.main-tab {
+    margin-left: -15px;
+    margin-right: -15px;
+    border-bottom: @MainTabBorderColor 1px solid;
+    li:first-child {
+        padding-left: 15px;
+    }
+    li {
+        a {
+            .rounded(0px);
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+            line-height: @WidgetHeaderHieght;
+            color: @WidgetHeaderTextColor;
+            outline: none;
+            border-left: @MainTabBorderColor 1px solid;
+            border-right: @MainTabBorderColor 1px solid;
+            border-top: @MainTabBorderColor 1px solid;
+            font-weight: 500;
+            i {
+                font-size: 20px;
+                position: relative;
+                top: 1px;
+                margin-bottom: -5px;
+            }
+        }
+    }
+}
+
+.main-tab-content {
+    margin: 0px -30px;
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: @MainTabBorderColor 1px solid;
+    margin-bottom: 20px;
+}
+
+.main-tab .active a,
+.main-tab &>.active &>a:hover {
+    cursor: pointer !important;
+    color: @ThemeColor !important;
+    border-bottom: 0 !important;
+    border-left: @MainTabBorderColor 1px solid !important;
+    border-right: @MainTabBorderColor 1px solid !important;
+    border-top: @MainTabBorderColor 1px solid !important;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-tab.nav {
+    & > li {
+        & > a {
+            position: relative;
+            display: block;
+            padding: 15px 20px;
+            .border-radius(@WidgetRound, 0, 0, @WidgetRound);
+            &:hover {
+                background-color: transparent;
+                border-left: @MainTabBorderColor 1px solid;
+                border-right: @MainTabBorderColor 1px solid;
+                border-top: @MainTabBorderColor 1px solid;
+                color: @ThemeColor !important;
+            }
+        }
+    }
+}
+
+.main-tab.nav li.active {
+    a {
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+.main-tab.nav li {
+    margin-bottom: -2px;
+}
+/*-- 2.2.0 Section Tab / .tab-widget --*/
+
+.tab-widget {
+    .nav-tabs {
+        border-bottom: none !important;
+        & > li {
+            & > a {
+                height: @WidgetHeaderHieght;
+                padding: 4px 20px;
+                border-top: 0px;
+                border-bottom: 0px;
+                border-left: 0px;
+                .rounded(0px);
+                margin: 0px;
+                display: inline-block;
+                line-height: 49px;
+                color: @WidgetHeaderTextColor;
+                background: transparent;
+                i {
+                    font-size: 16px;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+            & > a:hover {
+                border-top: 0px;
+                border-bottom: 0px;
+                border-left: 0px;
+                color: @ThemeColor;
+            }
+        }
+        & > li.active {
+            & > a {
+                height: @WidgetHeaderHieght;
+                color: @ThemeColor;
+                background: @WidgetBg;
+            }
+        }
+    }
+    .pull-right {
+        margin-bottom: 0px;
+        & > li {
+            & > a {
+                border-top: 0px;
+                border-bottom: 0px;
+                border-left: 1px solid @WidgetBorder !important;
+                border-right: 0px !important;
+            }
+            & > a:hover {
+                border-top: 0px;
+                border-bottom: 0px;
+                border-left: 1px solid @WidgetBorder !important;
+            }
+            &:last-child {
+                a {
+                    .border-radius(@WidgetRound, 0px, 0px, 0px);
+                }
+            }
+        }
+    }
+  .pull-left {
+    margin-bottom: 0px;
+    & > li {
+      & > a {
+        border-top: 0px;
+        border-bottom: 0px;
+        border-left: 0px !important;
+        border-right: 1px solid @WidgetBorder !important;
+      }
+      & > a:hover {
+        border-top: 0px;
+        border-bottom: 0px;
+        border-left: 0px !important;
+      }
+      &:last-child {
+        a {
+          .border-radius(@WidgetRound, 0px, 0px, 0px);
+        }
+      }
+    }
+  }
+}
+
+.widget-head {
+    .nav-tabs {
+        & > li.active {
+            & > a:focus {
+                border: none;
+            }
+        }
+    }
+}
+/*-- 2.2.1 Box Tab / .box-tab --*/
+
+.box-tab {
+    border: @WidgetBorder 1px solid;
+    position: relative;
+    margin-bottom: 20px;
+    background: @WidgetBg;
+    .rounded(@WidgetRound);
+    .tab-content {
+        min-height: 400px;
+        margin-left: @WidgetHeaderHieght;
+        padding: 15px;
+    }
+    .nav-tabs {
+        width: @WidgetHeaderHieght;
+        height: 100%;
+        margin: 0px;
+        position: absolute;
+        background: @WidgetHeaderBg;
+        border-bottom: 0px;
+        border-right: @WidgetHeadBottomBorder 1px solid;
+    }
+    .tabs-left {
+        & > .nav-tabs {
+            & > li {
+                margin-bottom: 0px;
+                & > a {
+                    min-width: @WidgetHeaderHieght !important;
+                    height: @WidgetHeaderHieght;
+                    display: block;
+                    padding: 0px;
+                    margin: 0px;
+                    font-size: 16px;
+                    .rounded(0px);
+                    line-height: @WidgetHeaderHieght;
+                    text-align: center;
+                    background: #f9f9f9;
+                    border-left: 0px;
+                    color: @PrimaryTextColor;
+                    border-right: @WidgetBorder 1px solid !important;
+                    border-top: @WidgetBorder 1px solid
+                }
+                & > a:hover {
+                    color: @ThemeColor;
+                }
+            }
+            & > li:first-child {
+                & > a {
+                    border-top: 0px;
+                    .border-radius(0px, 0px, 0px, @WidgetRound);
+                }
+            }
+            & > li.active {
+                & > a {
+                    background: @WidgetBg;
+                    border-right: @WidgetBg 1px solid !important;
+                    color: @ThemeColor;
+                }
+            }
+            & > li:last-child.active {
+                & > a {
+                    border-bottom: @WidgetBorder 1px solid !important;
+                }
+            }
+            .border-radius(0px,
+            0px,
+            @WidgetRound,
+            @WidgetRound);
+        }
+    }
+}
+/*-- 2.2.2 Bottom Tab / .tab-bottom --*/
+
+.widget-head.tab-bottom {
+    border-top: @WidgetBorder 1px solid;
+    border-bottom: none !important;
+    .border-radius(0px, @WidgetRound, @WidgetRound, 0px);
+}
+
+.tab-widget {
+    .tab-bottom {
+        .nav-tabs {
+            & > li.active {
+                & > a {
+                    background: #FFFFFF;
+                    color: @ThemeColor;
+                    height: @WidgetHeaderHieght;
+                    margin-top: -1px;
+                    cursor: pointer;
+                }
+            }
+            & > li {
+                &:last-child {
+                    & > a {
+                        .border-radius(0px, @WidgetRound, 0px, 0px);
+                    }
+                }
+            }
+        }
+    }
+}
+/*-- 2.2.3 Left Tab / .tab-widget --*/
+
+.tab-widget {
+    .tab-left {
+        display: inline-block;
+        float: left;
+        width: @TabSideBarWidth;
+        height: auto !important;
+        border-right: @WidgetBorder 1px solid;
+        .nav-tabs {
+            & > li.active {
+                & > a {
+                    height: @WidgetHeaderHieght;
+                    color: @ThemeColor;
+                    background: @WidgetBg;
+                    margin-right: -1px;
+                    cursor: pointer;
+                    &:hover, &:focus {
+                        color: @ThemeColor;
+                    }
+                }
+            }
+            & > li {
+                &:first-child {
+                    & > a {
+                        .border-radius(0px, 0px, 0px, @WidgetRound);
+                    }
+                }
+                &:last-child {
+                    & > a {
+                        .border-radius(0px, 0px, @WidgetRound, 0px);
+                    }
+                }
+            }
+        }
+    }
+    .widget-head.tab-left {
+        .border-radius(0px, 0px, @WidgetRound, @WidgetRound);
+    }
+    .tab-right {
+        display: inline-block;
+        float: right;
+        width: @TabSideBarWidth;
+        height: auto !important;
+        border-left: @WidgetBorder 1px solid;
+        .nav-tabs {
+            & > li.active {
+                & > a {
+                    margin-left: -1px;
+                }
+            }
+            & > li {
+                &:first-child {
+                    & > a {
+                        .border-radius(@WidgetRound, 0px, 0px, 0px);
+                    }
+                }
+                &:last-child {
+                    & > a {
+                        .border-radius(0px, @WidgetRound, 0px, 0px);
+                    }
+                }
+            }
+        }
+    }
+    .widget-head.tab-right {
+        .border-radius(@WidgetRound, @WidgetRound, 0px, 0px);
+    }
+    .nav-tabs {
+        li {
+            a {
+                i {
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+.tab-widget .tab-left .nav-tabs &>li,
+.nav-pills &>li,
+.tab-widget .tab-right .nav-tabs &>li,
+.nav-pills &>li {
+    float: none !important;
+}
+
+.tab-widget .tab-left .nav-tabs &>li &>a,
+.tab-widget .tab-right .nav-tabs &>li &>a {
+    display: block !important;
+    border-top: 0px;
+    border-bottom: @WidgetBorder 1px solid !important;
+    border-right: 0px;
+    border-left: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    margin: 0px;
+}
+
+.tab-widget .tab-left .nav-tabs &>li &>a:hover,
+.tab-widget .tab-right .nav-tabs &>li &>a:hover {
+    border-top: 0px;
+    border-bottom: @WidgetBorder 1px solid;
+    border-left: 0px;
+    color: @ThemeColor;
+}
+
+.tab-widget .tab-left .nav-tabs &>li,
+.tab-widget .tab-right .nav-tabs &>li {
+    margin-bottom: 0px;
+}
+
+.nav-tabs {
+    & > li {
+        & > a:hover {
+            border-color: transparent;
+        }
+    }
+}
+
+.tabbed-aside-left .widget-container {
+    padding-left: @TabSideBarWidth;
+}
+
+.tabbed-aside-right .widget-container {
+    padding-right: @TabSideBarWidth;
+}
+.aside-tab-content{
+    padding: 20px;
+}

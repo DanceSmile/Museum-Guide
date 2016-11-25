@@ -1,0 +1,115 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- 2.6 Notifications / .activity-item --*/
+
+//variables
+@Noty_Alert: #eeeeee;
+@Noty_Info: #b2ebf2;
+@Noty_Error: #ffcdd2;
+@Noty_Warning: #ffccbc;
+@Noty_Success: #c8e6c9;
+@Noty_Confirm: #c8e6c9;
+.activity-item {
+    i {
+        float: left;
+        margin-top: 3px;
+        font-size: 16px;
+        &.text-warning, &.text-error, &.text-info, &.text-success {
+            color: #666;
+        }
+    }
+}
+
+div.activity {
+    margin-left: 30px;
+    font-size: 13px;
+    a {
+        color: #222;
+        font-weight: 500;
+        &:hover, &:focus {
+            text-decoration: none;
+            color: @ThemeColor;
+        }
+    }
+    span {
+        display: block;
+        color: #444;
+        margin-top: 3px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+.MatMixNoty {
+    overflow: hidden;
+    .rounded(3px);
+    position: relative;
+    margin-bottom: 10px;
+    &.noty_container_type_alert {
+        background-color: @Noty_Alert;
+    }
+    &.noty_container_type_information {
+        background-color: @Noty_Info;
+    }
+    &.noty_container_type_error {
+        background-color: @Noty_Error;
+    }
+    &.noty_container_type_warning {
+        background-color: @Noty_Warning;
+    }
+    &.noty_container_type_success {
+        background-color: @Noty_Success;
+    }
+    &.noty_container_type_confirm {
+        background-color: @Noty_Confirm;
+    }
+    .noty_message {
+        padding: 15px 15px;
+    }
+    .noty_buttons {
+        padding: 15px 15px;
+        border-top: 1px solid rgba(000, 000, 000, 0.05);
+        background-color: rgba(000, 000, 000, .05);
+        button {
+            margin-right: 15px;
+        }
+    }
+    .noty_close {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 10px;
+        height: 10px;
+        visibility: hidden;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    &:hover {
+        & > .noty_bar {
+            & > .noty_message {
+                & > .noty_close {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.noty_modal {
+    &.MatMixNoty {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 10000;
+        opacity: 0.6;
+        display: none;
+        border: none;
+        left: 0;
+        top: 0
+    }
+}
+
+.ex-noty {
+    margin-bottom: 10px !important;
+}

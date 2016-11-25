@@ -1,0 +1,520 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.iconic-view .large-logo {
+  display: none;
+}
+.pin-it .iconic-logo {
+  display: none !important;
+}
+.iconic-view .iconic-logo {
+  display: block !important;
+}
+@media screen and (max-width: 1024px) {
+  .list-menu-view .page-content {
+    margin-left: 0px;
+  }
+  .list-menu-view .left-aside {
+    left: -260px;
+  }
+  .hide-list-menu .page-content {
+    margin-left: 0px;
+  }
+  .hide-list-menu .left-aside {
+    left: 0px;
+  }
+  .list-menu-view .page-content {
+    margin-left: 0px;
+  }
+  .list-menu-view .left-aside {
+    left: -260px;
+  }
+  .pin-it .page-content {
+    margin-left: 0px;
+  }
+  .hide-aside-left {
+    left: -260px;
+  }
+  .aside-close {
+    display: block;
+  }
+  .leftbar-action {
+    display: none;
+  }
+  .leftbar-action-mobile {
+    display: block;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .top-mid,
+  .desktop-search {
+    display: none;
+  }
+  .top-aside-right {
+    position: absolute;
+    top: -60px;
+    right: 60px;
+  }
+  .mobile-search-btn {
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    font-size: 18px;
+  }
+  .iconic-logo {
+    display: none;
+  }
+  .page-content {
+    margin-left: 0px;
+  }
+  .left-aside {
+    z-index: 8000;
+  }
+  .iconic-view .page-content {
+    margin-left: 0px;
+  }
+  .iconic-view .left-aside {
+    left: -60px;
+  }
+  .hide-list-menu .page-content {
+    margin-left: 0px;
+  }
+  .hide-list-menu .left-aside {
+    left: 0px;
+  }
+  .list-menu-view .page-content {
+    margin-left: 0px;
+  }
+  .list-menu-view .left-aside {
+    left: -260px;
+  }
+  .pin-it .page-content {
+    margin-left: 0px;
+  }
+  .hide-aside-left {
+    left: -260px;
+  }
+  .top-bar-action {
+    min-height: 60px;
+  }
+  .top-bar-action .rightbar-action {
+    display: block;
+  }
+  .top-aside-right .rightbar-action {
+    display: none;
+  }
+  .aside-close {
+    display: block;
+  }
+  .leftbar-action {
+    display: none;
+  }
+  .leftbar-action-mobile {
+    display: block;
+  }
+  .m-aside-action {
+    display: block;
+  }
+  .h-iconic-view .left-aside {
+    left: -260px;
+    width: 260px;
+  }
+  .user-nav {
+    margin-right: 0px;
+  }
+  .notification-nav {
+    margin-left: 0px;
+  }
+  .top-bar .container-fluid {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .inbox-container .inbox-sidebar {
+    z-index: 2000;
+    left: -200px;
+  }
+  .inbox-container .inbox-content {
+    margin-left: 0px;
+  }
+  .inbox-container .inbox-content .email-list {
+    width: 100%;
+  }
+  .inbox-container .inbox-content .mail-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    right: -100%;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .inbox-container.hide-inbox-sidebar .inbox-sidebar {
+    left: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .inbox-container.hide-inbox-sidebar .inbox-content {
+    margin-left: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .inbox-container.mobile-mail-show .inbox-content .mail-body {
+    right: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .inbox-container .mobile-mail-action {
+    display: block;
+  }
+  .mail-body.multi-page .email-content {
+    margin: 0px;
+  }
+  .compose-form,
+  .email-list-toolbar {
+    width: 100%;
+  }
+  .note-container .note-sidebar {
+    z-index: 2000;
+    left: -160px;
+  }
+  .note-container .note-content {
+    margin-left: 0px;
+  }
+  .note-container .note-content .email-list {
+    width: 100%;
+    z-index: 1600;
+  }
+  .note-container .note-content .mail-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    right: -100%;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .note-container.hide-note-sidebar .note-sidebar {
+    left: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .note-container.hide-note-sidebar .inbox-content {
+    margin-left: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .note-container.mobile-mail-show .inbox-content .mail-body {
+    right: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .note-container .mobile-mail-action {
+    display: block;
+  }
+  .note-list-wrap {
+    width: 100% !important;
+    z-index: 1600;
+  }
+  .note-list-toolbar {
+    width: 100%;
+  }
+  .note-list-toolbar .note-search-form {
+    width: 100%;
+  }
+  .note-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100% !important;
+    height: 100%;
+    margin-left: 0px;
+    right: -100%;
+    z-index: 6800 !important;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .mobile-note-show .note-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100% !important;
+    height: 100%;
+    margin-left: 0px;
+    right: 0px;
+    z-index: 8800 !important;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .task-container .task-sidebar {
+    z-index: 2000;
+    left: -200px;
+  }
+  .task-container .task-content {
+    margin-left: 0px;
+  }
+  .task-container .task-content .task-list {
+    width: 100%;
+  }
+  .task-container .task-content .task-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    right: -100%;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .task-container.hide-task-sidebar .task-sidebar {
+    left: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .task-container.hide-task-sidebar .task-content {
+    margin-left: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .task-container.mobile-task-show .task-content .task-body {
+    right: 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .task-container .mobile-task-action {
+    display: block;
+  }
+  .task-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100% !important;
+    height: 100%;
+    margin-left: 0px;
+    right: -100%;
+    z-index: 6800 !important;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .mobile-task-show .task-body {
+    z-index: 1800;
+    position: fixed;
+    width: 100% !important;
+    height: 100%;
+    margin-left: 0px;
+    right: 0px;
+    z-index: 8800 !important;
+    background-color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .task-list-toolbar {
+    width: 100%;
+  }
+  .task-list-toolbar .task-search-form {
+    width: 100%;
+  }
+  .forum-list-container {
+    margin-right: 0px;
+  }
+  .forum-categories-show {
+    -ms-transform: translate(100%, 0px) !important;
+    -webkit-transform: translate(100%, 0px) !important;
+    transform: translate(100%, 0px) !important;
+    -webkit-transition: transform .1s linear;
+    transition: transform .1s linear;
+  }
+  .forum-categories-hide {
+    -ms-transform: translate(0px, 0px) !important;
+    -webkit-transform: translate(0px, 0px) !important;
+    transform: translate(0px, 0px) !important;
+    -webkit-transition: transform .1s linear;
+    transition: transform .1s linear;
+  }
+  .forum-aside-toggle {
+    display: block;
+  }
+  .forum-categories {
+    width: 287px;
+    z-index: 6000;
+  }
+  /*-Widgets-*/
+  .stat-w-wrap {
+    border: #eee 1px solid;
+    margin-bottom: 20px;
+  }
+  .w-info-graph .w-info-chart-meta {
+    padding-left: 20px;
+  }
+  .top-stat-box {
+    padding-top: 20px;
+  }
+  .colored-bar .stat-w-wrap {
+    border: rgba(255, 255, 255, 0.1) 1px solid !important;
+  }
+  .forum-list-switch {
+    padding-bottom: 20px;
+  }
+  .sats-widget .stats-icon {
+    width: 70px !important;
+  }
+}
+@media screen and (max-width: 790px) {
+  .jumbotron {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  .desktop-search {
+    display: none;
+  }
+  .mobile-search {
+    display: block;
+  }
+  .top-bar .notification-nav {
+    float: left;
+    width: auto;
+  }
+  .sats-widget {
+    margin-bottom: 20px;
+  }
+  .inbox-toolbar .mail-search-form {
+    display: none;
+  }
+  .calendar-nav {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .top-bar .notification-nav {
+    float: left;
+    width: auto;
+  }
+  .user-nav {
+    float: none;
+  }
+  .user-nav .user-info {
+    display: none !important;
+  }
+  .user-nav .dropdown-menu {
+    left: -88px;
+  }
+  .user-nav > ul > li > a {
+    color: #444444;
+    display: block;
+    min-height: 61px;
+    padding: 5px 10px;
+  }
+  .user-nav > ul > li.open > a {
+    color: #454545;
+    display: block;
+    min-height: 61px;
+    padding: 5px 10px;
+  }
+  .user-nav .user-thumb {
+    margin: 0px;
+    text-align: center;
+  }
+  .mobile-search {
+    float: right !important;
+  }
+  .responsive-fix {
+    clear: both;
+  }
+  .table .btn-toolbar .m-user-edit,
+  .table .btn-toolbar .m-user-delete {
+    display: block;
+    width: 100%;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+  .dataTables_info {
+    margin-bottom: 10px;
+  }
+  .topic-feedback-stat {
+    display: none !important;
+  }
+  .topic-thumb {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 10px !important;
+  }
+  .topic-thumb img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .topic-intro {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .cross-ribbon {
+    left: 45px !important;
+  }
+  .topics-list {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .ticket-action {
+    margin-top: 20px;
+  }
+  .topic-reply {
+    padding: 20px !important;
+    display: block !important;
+  }
+  .topic-reply .topic-reply-thumb {
+    display: block !important;
+    margin-bottom: 20px;
+  }
+  .topic-reply .topic-reply-details {
+    display: block !important;
+    padding-left: 0px !important;
+  }
+}

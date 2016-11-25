@@ -1,0 +1,39 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.14 Error Page --*/
+.error-wrap {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(68, 68, 68, 0.05);
+  -moz-box-shadow: 0 0 5px rgba(68, 68, 68, 0.05);
+  box-shadow: 0 0 5px rgba(68, 68, 68, 0.05);
+  padding: 40px;
+}
+.error-wrap .error-container {
+  width: 60%;
+  margin: auto;
+}
+.error-wrap .error-container .error-code {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 80px;
+  font-weight: 500;
+  color: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background-color: #15bdc3;
+  margin: 0px auto 40px auto;
+}
+.error-wrap .error-container .error-searchbox {
+  margin-top: 10px;
+}
+.error-wrap .error-container .error-message h4 {
+  font-size: 24px;
+  color: #e57373;
+}

@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+//添加后台群组路由
+Route::group(["prefix"=>"admin","namespace"=>"Admin"],function(){
+
+    //后台登陆首页
+    Route::get("/home","HomeController@index")->name("home");
+
+});
+
+//载入登陆模板
+Route::get("/admin","Admin\LoginController@login");
+//判断用户登陆规则
+Route::post("/loginHandle","Admin\LoginController@loginHandle");
+
+
+Route::get('test', function () {
+    return  view("admin.login"); 
+});

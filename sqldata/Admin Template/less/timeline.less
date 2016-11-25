@@ -1,0 +1,145 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- 2.12 Timeline --*/
+//Background Colors
+.t-bg-green {
+    background-color: @green_block;
+}
+
+.t-bg-blue {
+    background-color: @blue_block;
+}
+
+.t-bg-orange {
+    background-color: @orange_block;
+}
+
+.t-bg-gray {
+    background-color: @gray_block;
+}
+
+.t-bg-violet {
+    background-color: @violet_block;
+}
+
+.t-bg-tur {
+    background-color: @tur_block;
+}
+
+.t-bg-brown {
+    background-color: @brown_block;
+}
+.activities-timeline{
+  padding-left: 45px;
+
+}
+.activities-list{
+    position: relative;
+    list-style: none;
+    padding: 30px 20px 30px 0px;
+    margin: 0px;
+    &:after{
+      content: "";
+      height: 100%;
+      width: 1px;
+      background-color: #e5e5e5;
+      position: absolute;
+      left: 10px;
+      top: 0px;
+    }
+  & > li{
+    display: table;
+    padding: 15px 0px;
+    & > div{
+      display: table-cell;
+      vertical-align: top;
+      &.activities-badge{
+        width: 40px;
+        height: 40px;
+        padding-right: 20px;
+        span{
+          margin-top: 10px;
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          background-color: @ThemeColor;
+          border: #e5e5e5 3px solid;
+          .rounded(100%);
+          position: relative;
+          z-index: 100;
+        }
+      }
+      &.activities-details{
+        border: #eee 1px solid;
+        padding: 20px;
+        position: relative;
+        .activities-header{
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: 0px;
+          margin-bottom: 6px;
+          a{
+            color: #444;
+            &:hover,
+            &:focus
+            {
+              text-decoration: none;
+              color: @ThemeColor;
+            }
+          }
+        }
+        .activities-meta{
+          margin-bottom: 6px;
+          color: #888;
+        }
+        p{
+          margin-bottom: 0px;
+          color: #666;
+        }
+        &:after, &:before {
+          right: 100%;
+          top: 20px;
+          border: solid transparent;
+          content: "";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+        &:after {
+          border-right-color: #fff;
+          border-width: 6px;
+          margin-top: -6px;
+        }
+        &:before {
+          border-right-color: #eee;
+          border-width: 8px;
+          margin-top: -8px;
+        }
+
+      }
+
+    }
+  }
+}
+.activities-load{
+  border-top:#eee 1px solid;
+  a{
+    padding: 20px 30px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: #444;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #f9f9f9;
+      &:hover,
+      &:focus
+      {
+        text-decoration: none;
+        color: @ThemeColor;
+      }
+
+  }
+
+}

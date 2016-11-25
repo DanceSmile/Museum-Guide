@@ -1,0 +1,49 @@
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+.topbar {
+  min-height: 80px;
+  background-color: #37474f;
+}
+.slider-wrap {
+  text-align: center;
+}
+.slider-wrap .topH {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+.slider-wrap .topTagline {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+.demo-block img {
+  width: 100%;
+}
+.demo-block a {
+  display: block;
+}
+.demo-block a:hover,
+.demo-block a:focus {
+  text-decoration: none;
+}
+.demo-block .demo-intro {
+  padding: 0px 20px;
+  text-align: center;
+}
+.demo-block .demo-intro h3 {
+  font-size: 18px;
+  margin: 0px;
+}
+.demo-block .demo-intro h3 a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,75 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.4 Progress / .progress --*/
+.progress {
+  height: 2px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  background-color: #eeeeee;
+}
+.progress .progress-bar {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.progress-meta {
+  margin-bottom: 6px;
+}
+.progress-meta .progress-label {
+  font-size: 12px;
+  letter-spacing: .05em;
+  position: relative;
+  top: 5px;
+}
+.progress-meta .progress-percent {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+.progress-meta .progress-percent-multiple {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+.progress-meta .label {
+  padding: 5px;
+}
+.progress-intro {
+  font-size: 12px;
+  display: block;
+  padding-bottom: 0px;
+  padding-top: 6px;
+  color: #868686;
+}
+.epie-chart {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.epie-chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.epie-chart .percent {
+  display: inline-block;
+  z-index: 2;
+  color: #868686;
+}
+.epie-chart .percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+.epie-chart .p-done {
+  display: inline-block;
+  z-index: 8;
+}

@@ -1,0 +1,631 @@
+@import "variables.less";
+@import "mixins.less";
+
+/*-- 2.3 Bootstrap Elements  --*/
+@input-border-focus:             #80deea;
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+@btn-font-weight:                normal;
+
+@btn-default-color:              #333;
+@btn-default-bg:                 #fff;
+@btn-default-border:             #e5e5e5;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             darken(@btn-primary-bg, 2%);
+
+@btn-success-color:              #fff;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@btn-success-bg, 2%);
+
+@btn-info-color:                 #fff;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                darken(@btn-info-bg, 2%);
+
+@btn-warning-color:              #fff;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@btn-warning-bg, 2%);
+
+@btn-danger-color:               #fff;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 2%);
+
+@btn-link-disabled-color:        @gray-light;
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+@input-bg:                       #fff;
+//** `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+
+//** Text color for `<input>`s
+@input-color:                    @gray;
+//** `<input>` border color
+@input-border:                   #e5e5e5;
+
+// Buttons
+// --------------------------------------------------
+// Base styles
+// --------------------------------------------------
+
+
+
+
+//BOOTSTRAP RESET VARIABLES
+
+@brand-primary: darken(#00bcd4,
+6.5%); // #337ab7
+@brand-success: #7cb342;
+@brand-info: #29b6f6;
+@brand-warning: #ffb300;
+@brand-danger: #ff8a80;
+
+@border-radius-base:        3px;
+@border-radius-large:       4px;
+@border-radius-small:       2px;
+
+@padding-base-vertical:     8px;
+@padding-base-horizontal:   12px;
+
+@padding-large-vertical:    10px;
+@padding-large-horizontal:  16px;
+
+@padding-small-vertical:    5px;
+@padding-small-horizontal:  10px;
+
+@padding-xs-vertical:       1px;
+@padding-xs-horizontal:     5px;
+
+@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-small:         1.5;
+
+
+
+@btn-default-color:              #333;
+@btn-default-bg:                 #f5f5f5;
+
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+@dropdown-bg:                    #fff;
+//** Dropdown menu `border-color`.
+@dropdown-border:                #e5e5e5;
+//** Dropdown menu `border-color` **for IE8**.
+@dropdown-fallback-border:       #ccc;
+//** Divider color for between dropdown items.
+@dropdown-divider-bg:            #e5e5e5;
+
+//** Dropdown link text color.
+@dropdown-link-color:            @gray-dark;
+//** Hover color for dropdown links.
+@dropdown-link-hover-color:      darken(@gray-dark, 5%);
+//** Hover background for dropdown links.
+@dropdown-link-hover-bg:         #f5f5f5;
+
+//** Active dropdown menu item text color.
+@dropdown-link-active-color:     @component-active-color;
+//** Active dropdown menu item background color.
+@dropdown-link-active-bg:        @component-active-bg;
+
+//** Disabled dropdown menu item background color.
+@dropdown-link-disabled-color:   @gray-light;
+
+//** Text color for headers within dropdown menus.
+@dropdown-header-color:          @gray-light;
+
+//** Deprecated `@dropdown-caret-color` as of v3.1.0
+@dropdown-caret-color:           #000;
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @input-color;
+  background-color: @input-bg;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid @input-border;
+  border-radius: @input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  .form-control-focus();
+
+  // Placeholder
+  .placeholder();
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+  }
+
+  // Reset height for `textarea`s
+  textarea& {
+    height: auto;
+  }
+}
+
+// Text input groups
+// -------------------------
+.input-group-addon {
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @font-size-base;
+  font-weight: normal;
+  line-height: 1;
+  color: @input-color;
+  text-align: center;
+  background-color: @input-group-addon-bg;
+  border: 1px solid @input-group-addon-border-color;
+  border-radius: @border-radius-base;
+
+  // Sizing
+  &.input-sm {
+    padding: @padding-small-vertical @padding-small-horizontal;
+    font-size: @font-size-small;
+    border-radius: @border-radius-small;
+  }
+  &.input-lg {
+    padding: @padding-large-vertical @padding-large-horizontal;
+    font-size: @font-size-large;
+    border-radius: @border-radius-large;
+  }
+
+  // Nuke default margins from checkboxes and radios to vertically center within.
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
+}
+
+
+
+// Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+//
+// The `.form-group-* form-control` variations are sadly duplicated to avoid the
+// issue documented in https://github.com/twbs/bootstrap/issues/15074.
+
+.input-sm {
+  .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @input-border-radius-small);
+}
+.form-group-sm {
+  .form-control {
+    .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @input-border-radius-small);
+  }
+  .form-control-static {
+    height: @input-height-small;
+    padding: @padding-small-vertical @padding-small-horizontal;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+    min-height: (@line-height-computed + @font-size-small);
+  }
+}
+
+.input-lg {
+  .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @input-border-radius-large);
+}
+.form-group-lg {
+  .form-control {
+    .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @input-border-radius-large);
+  }
+  .form-control-static {
+    height: @input-height-large;
+    padding: @padding-large-vertical @padding-large-horizontal;
+    font-size: @font-size-large;
+    line-height: @line-height-large;
+    min-height: (@line-height-computed + @font-size-large);
+  }
+}
+
+
+// Horizontal dividers
+//
+// Dividers (basically an hr) within dropdowns and nav lists
+
+.nav-divider(@color: #e5e5e5) {
+  height: 1px;
+  margin: ((@line-height-computed / 2) - 1) 0;
+  overflow: hidden;
+  background-color: @color;
+}
+
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0; // For input.btn
+    font-weight:500;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    outline: 0;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    white-space: nowrap;
+    .button-size(@padding-base-vertical;
+    @padding-base-horizontal;
+    @font-size-base;
+    @line-height-base;
+    @border-radius-base);
+    .user-select(none);
+    .transition(.2s, ease-out);
+    &:hover, &:focus, &.focus {
+        color: @btn-default-color;
+        text-decoration: none;
+        outline: 0 !important;
+        .transition(.2s, ease-out);
+        
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        .box-shadow(none);
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: @cursor-disabled;
+        pointer-events: none; // Future-proof disabling of clicks
+        .opacity(.65);
+        .box-shadow(none);
+    }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+.btn-default {
+    .matmix-button-variant(@btn-default-color;
+    @btn-default-bg;
+    @btn-default-border);
+}
+
+.btn-primary {
+    .matmix-button-variant(@btn-primary-color;
+    @btn-primary-bg;
+    @btn-primary-border);
+}
+
+// Success appears as green
+.btn-success {
+    .matmix-button-variant(@btn-success-color;
+    @btn-success-bg;
+    @btn-success-border);
+}
+
+// Info appears as blue-green
+.btn-info {
+    .matmix-button-variant(@btn-info-color;
+    @btn-info-bg;
+    @btn-info-border);
+}
+
+// Warning appears as orange
+.btn-warning {
+    .matmix-button-variant(@btn-warning-color;
+    @btn-warning-bg;
+    @btn-warning-border);
+}
+
+// Danger and error appear as red
+.btn-danger {
+    .matmix-button-variant(@btn-danger-color;
+    @btn-danger-bg;
+    @btn-danger-border);
+}
+
+// Link buttons
+// -------------------------
+// Make a button look and behave like a link
+.btn-link {
+    color: @link-color;
+    font-weight: normal;
+    border-radius: 0;
+    &, &:active, &.active, &[disabled], fieldset[disabled] & {
+        background-color: transparent;
+        .box-shadow(none);
+    }
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+    }
+    &:hover,
+    &:focus {
+        color: @link-hover-color;
+        text-decoration: @link-hover-decoration;
+        background-color: transparent;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover, &:focus {
+            color: @btn-link-disabled-color;
+            text-decoration: none;
+        }
+    }
+}
+
+// Button Sizes
+// --------------------------------------------------
+.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    .button-size(@padding-large-vertical;
+    @padding-large-horizontal;
+    @font-size-large;
+    @line-height-large;
+    @border-radius-large);
+}
+
+.btn-sm {
+    // line-height: ensure proper height of button next to small input
+    .button-size(@padding-small-vertical;
+    @padding-small-horizontal;
+    @font-size-small;
+    @line-height-small;
+    @border-radius-small);
+}
+
+.btn-xs {
+    .button-size(@padding-xs-vertical;
+    @padding-xs-horizontal;
+    @font-size-small;
+    @line-height-small;
+    @border-radius-small);
+}
+
+// Block button
+// --------------------------------------------------
+.btn-block {
+    display: block;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+    margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+
+// The clickable button for toggling the menu
+// Remove the gradient and set the same inset shadow as the :active state
+.btn-group.open .dropdown-toggle {
+  .box-shadow(none); //.box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+
+  // Show no shadow for `.btn-link` since it has no other button styles.
+  &.btn-link {
+    .box-shadow(none);
+  }
+}
+
+
+// The dropdown menu (ul)
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  font-size: @font-size-base;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  background-color: @dropdown-bg;
+  border: 1px solid @dropdown-fallback-border; // IE8 fallback
+  border: 1px solid @dropdown-border;
+  border-radius: @border-radius-base;
+  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+     .animated(.3s);
+  background-clip: padding-box;
+
+  // Aligns the dropdown menu to right
+  //
+  // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Dividers (basically an hr) within the dropdown
+  .divider {
+    .nav-divider(@dropdown-divider-bg);
+  }
+
+  // Links within the dropdown menu
+  > li > a {
+    display: block;
+    padding: 6px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: @line-height-base;
+    color: @dropdown-link-color;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+  }
+}
+
+
+.label-default {
+  .label-variant(@label-default-bg);
+}
+
+.label-primary {
+  .label-variant(@label-primary-bg);
+}
+
+.label-success {
+  .label-variant(@label-success-bg);
+}
+
+.label-info {
+  .label-variant(@label-info-bg);
+}
+
+.label-warning {
+  .label-variant(@label-warning-bg);
+}
+
+.label-danger {
+  .label-variant(@label-danger-bg);
+}
+
+
+// Bar of progress
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: @font-size-small;
+  line-height: @line-height-computed;
+  color: @progress-bar-color;
+  text-align: center;
+  background-color: @progress-bar-bg;
+  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  .transition(width .6s ease);
+}
+
+// Call animation for the active one
+//
+// `.progress.active .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar.active` approach.
+.progress.active .progress-bar,
+.progress-bar.active {
+  .animation(progress-bar-stripes 2s linear infinite);
+}
+
+
+// Variations
+// -------------------------
+
+.progress-bar-success {
+  .progress-bar-variant(@progress-bar-success-bg);
+}
+
+.progress-bar-info {
+  .progress-bar-variant(@progress-bar-info-bg);
+}
+
+.progress-bar-warning {
+  .progress-bar-variant(@progress-bar-warning-bg);
+}
+
+.progress-bar-danger {
+  .progress-bar-variant(@progress-bar-danger-bg);
+}
+
+
+
+/*--- Dropdown Extend ---*/
+
+.dropdown-extend.open {
+    .btn-lbl {
+        -webkit-border-radius: 4px 0px 0px 0px !important;
+        -moz-border-radius: 4px 0px 0px 0px !important;
+        border-radius: 4px 0px 0px 0px !important;
+        background: #fff;
+        z-index: 1000;
+        color: @PrimaryTextColor;
+        border-bottom: #fff 1px solid;
+        border-top: @btn-default-border 1px solid;
+        border-left: @btn-default-border 1px solid;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .btn-split {
+        -webkit-border-radius: 0px 4px 0px 0px !important;
+        -moz-border-radius: 0px 4px 0px 0px !important;
+        border-radius: 0px 4px 0px 0px !important;
+        z-index: 1000;
+    }
+}
+
+.dropdown-extend {
+    .dropdown-menu {
+        -webkit-border-radius: 0px 4px 4px 4px !important;
+        -moz-border-radius: 0px 4px 4px 4px !important;
+        border-radius: 0px 4px 4px 4px !important;
+        margin-left: 0px;
+        margin-top: -1px;
+        z-index: 100;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.dropdown-extend.pull-right.open {
+    .dropdown-menu {
+        -webkit-border-radius: 4px 0px 4px 4px !important;
+        -moz-border-radius: 4px 0px 4px 4px !important;
+        border-radius: 4px 0px 4px 4px !important;
+        margin-right: 0px;
+        margin-top: -1px;
+        z-index: 100;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.dropdown-right {
+    .dropdown-menu {
+        left: auto;
+        right: 0px;
+        .box-shadow(none);
+    }
+}
+
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // Reverse the caret
+  .caret {
+    border-top: 0;
+    border-bottom: @caret-width-base solid;
+    content: "";
+  }
+  // Different positioning for bottom up menu
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+      z-index: 2000;
+  }
+}

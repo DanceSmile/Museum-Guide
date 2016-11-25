@@ -1,0 +1,103 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.6 Notifications / .activity-item --*/
+.activity-item i {
+  float: left;
+  margin-top: 3px;
+  font-size: 16px;
+}
+.activity-item i.text-warning,
+.activity-item i.text-error,
+.activity-item i.text-info,
+.activity-item i.text-success {
+  color: #666;
+}
+div.activity {
+  margin-left: 30px;
+  font-size: 13px;
+}
+div.activity a {
+  color: #222;
+  font-weight: 500;
+}
+div.activity a:hover,
+div.activity a:focus {
+  text-decoration: none;
+  color: #15bdc3;
+}
+div.activity span {
+  display: block;
+  color: #444;
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 16px;
+}
+.MatMixNoty {
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.MatMixNoty.noty_container_type_alert {
+  background-color: #eeeeee;
+}
+.MatMixNoty.noty_container_type_information {
+  background-color: #b2ebf2;
+}
+.MatMixNoty.noty_container_type_error {
+  background-color: #ffcdd2;
+}
+.MatMixNoty.noty_container_type_warning {
+  background-color: #ffccbc;
+}
+.MatMixNoty.noty_container_type_success {
+  background-color: #c8e6c9;
+}
+.MatMixNoty.noty_container_type_confirm {
+  background-color: #c8e6c9;
+}
+.MatMixNoty .noty_message {
+  padding: 15px 15px;
+}
+.MatMixNoty .noty_buttons {
+  padding: 15px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.MatMixNoty .noty_buttons button {
+  margin-right: 15px;
+}
+.MatMixNoty .noty_close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 10px;
+  height: 10px;
+  visibility: hidden;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.MatMixNoty:hover > .noty_bar > .noty_message > .noty_close {
+  visibility: visible;
+}
+.noty_modal.MatMixNoty {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 10000;
+  opacity: 0.6;
+  display: none;
+  border: none;
+  left: 0;
+  top: 0;
+}
+.ex-noty {
+  margin-bottom: 10px !important;
+}

@@ -1,0 +1,256 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- MatMix Theme --*/
+
+@new_ThemeColor: @ThemeColor;
+@new_BodyBg: #f5f5f5;
+
+// Top Bar
+@new_TopBarBgColor: #cfd8dc; // Top Bar Background Color
+@new_TopBarBoxShadow: 0 0 0px rgba(68,68,68,.2);
+@new_TopBarIconColor: #fff; // Top Bar Icons Color
+@new_TopBarIconHoverColor: #fff; // Top Bar Icons Hover Color
+@new_actionBtnBg: #78909c; // Top Bar Icons Background Color
+@new_TopBarIconBg: @new_actionBtnBg;
+@new_TopBarIconHoverBg: @new_ThemeColor; // Top Bar Icons Background Hover Background
+@new_TopBarBottomBorder: #f1f1f1;
+
+// Left Bar
+@new_LeftAsideBgColor: #343843; // Left Bar Background Color
+@new_leftBarBrandingBg: @new_ThemeColor; // Left Bar Header Color
+@new_leftBarLinkColor: #9eadb3; // Left Bar Link Color
+@new_leftBarLinkHoverColor: @new_ThemeColor; // Left Bar Link Hover Color
+@new_leftBarListBg: #282c36; // Left Bar Link Background Color
+@new_IconicDropdownBg: #333;
+
+// Top Bar Notifications
+@new_TopBarLinkColor: #444444; // Top Bar Link Color
+@new_TopBarLinkHoverColor: @new_ThemeColor; // Top Bar Link Hover Color
+@new_NotyBoubleBg: #fb8c00; // Notification Altert Background Background
+@new_AlertBubbleColor: @new_NotyBoubleBg;
+@new_NotyBoubleLink: #fff; // Notification Altert Text Color
+
+// User Nav
+@new_UserNavDropdownBorder: rgba(000,000,000,.1); // User Nav Border Color
+@new_UserNavDropdownActiveBorder: #e5e5e5; // User Nav Active Border Color
+
+//Right Sidebar
+@new_RightAsideBgColor: #F5f5f5; // Right Side Bar Background Color
+@new_RightAsideBrandingBg: @new_ThemeColor;
+@new_RightAsideTabBg: @new_RightAsideBgColor;
+@new_RightAsideTabLinkColor: #ffffff; // Right Side Bar Link Color
+@new_RightAsideTabLinkHoverColor: #f5f5f5; // Right Side Bar Link Hover Color
+
+//Widgets
+@new_WidgetBoxShadowInset: rgba(255,255,255,1); // Widget Header Box Shadow Inset
+@new_WidgetBorder: #eeeeee; // Widget Header Border
+@new_WidgetHeadBottomBorder: #eeeeee; // Widget Header Bottom Border
+@new_WidgetBg: #ffffff; // Widget Background Color
+@new_WidgetFontColor: #444444; // Widget Header Text Color
+@new_WidgetHeaderBg: #f9f9f9; // Widget Header Background Color
+@new_WidgetHeaderTextColor: @new_WidgetFontColor;
+@new_OuterBoxShadow: 0 0 5px rgba(68,68,68,.05);
+
+//Tab Widget
+@new_MainTabBorderColor: @new_WidgetBorder;
+
+
+
+
+/*-- Leftbar --*/
+.left-aside {
+  background-color: @new_LeftAsideBgColor;
+  .aside-branding {
+    background-color: @new_leftBarBrandingBg;
+  }
+}
+.left-navigation {
+  li a {
+    color: @new_leftBarLinkColor;
+  }
+  a.active {
+    color: @new_ThemeColor;
+  }
+  > ul {
+    > li {
+      > a {
+        color: @new_leftBarLinkColor;
+
+        &:hover {
+          color: @new_ThemeColor;
+        }
+      }
+    }
+    ul {
+      li a {
+        &:hover {
+          color: @new_ThemeColor;
+        }
+      }
+    }
+  }
+
+  .list-accordion > li > a {
+    &:before {
+      background: @new_leftBarListBg;
+    }
+  }
+}
+
+/*-- Topbar --*/
+.top-bar {
+  background-color: @new_TopBarBgColor !important;
+  .box-shadow(@new_TopBarBoxShadow) !important;
+}
+
+.leftbar-action {
+  background-color: @new_actionBtnBg !important;
+  color: @new_TopBarIconColor !important;
+  &:hover, &:active, &:focus {
+    background-color: @new_TopBarIconHoverBg !important;
+    color: @new_TopBarIconHoverColor !important;
+  }
+}
+.leftbar-action-mobile {
+  background-color: @new_actionBtnBg !important;
+  color: @new_TopBarIconColor !important;
+  &:hover, &:active, &:focus {
+    background-color: @new_TopBarIconHoverBg !important;
+    color: @new_TopBarIconHoverColor !important;
+  }
+}
+
+.m-aside-action {
+  background-color: @new_actionBtnBg !important;
+}
+
+.top-aside-right {
+  .rightbar-action {
+    background-color: @new_actionBtnBg !important;
+    color: @new_TopBarIconColor !important;
+    &:hover, &:active, &:focus {
+      background-color: @new_ThemeColor !important;
+    }
+  }
+}
+
+.top-bar-action {
+  .rightbar-action {
+    &:hover, &:active, &:focus {
+      background-color: @new_TopBarIconHoverBg !important;
+      color: @new_TopBarIconHoverColor !important;
+    }
+    background-color: @new_actionBtnBg !important;
+    i {
+      color: @new_TopBarIconColor !important;
+    }
+  }
+}
+/*-- Search Bar --*/
+
+.desktop-search {
+  span {
+    color: @new_TopBarLinkColor !important;
+    &:hover {
+      color: @new_ThemeColor !important;
+    }
+  }
+}
+
+.mobile-search {
+  span {
+    &:hover {
+      color: @new_ThemeColor !important;
+    }
+  }
+}
+
+.search-form {
+  .search-close {
+    &:hover {
+      color: @new_ThemeColor !important;
+    }
+  }
+}
+
+/*-- notification-nav --*/
+
+.notification-nav {
+  & > ul {
+    & > li {
+      & > a {
+        color: @new_TopBarLinkColor !important;
+        .alert-bubble {
+          background-color: @new_AlertBubbleColor !important;
+          color: @new_NotyBoubleLink !important;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          color: @new_ThemeColor !important;
+        }
+      }
+    }
+  }
+}
+
+.user-nav {
+  ul {
+
+    ul {
+      & >li {
+        & >a {
+          &:hover {
+            color: @new_ThemeColor !important;
+          }
+        }
+      }
+    }
+  }
+  & > ul {
+    & >li {
+      & >a {
+        color: @new_TopBarLinkColor !important;
+      }
+    }
+  }
+  .dropdown {
+    border-left:@new_UserNavDropdownBorder 1px solid !important;
+    border-top: @new_UserNavDropdownBorder 1px solid !important;
+    border-right: @new_UserNavDropdownBorder 1px solid !important;
+  }
+}
+
+/*-- Rightbar --*/
+.right-aside {
+  background-color: @new_RightAsideBgColor !important;
+  .aside-branding {
+    background-color: @new_RightAsideBrandingBg !important;
+  }
+}
+
+.aside-tab {
+  li {
+    a {
+      color: @new_RightAsideTabLinkColor;
+      &:focus, &:hover {
+        color: @new_RightAsideTabLinkHoverColor;
+      }
+    }
+  }
+  li.active {
+    a {
+      background-color: @new_RightAsideTabBg !important;
+      color: @new_ThemeColor;
+      &:focus, &:hover {
+        background-color: @new_RightAsideTabBg !important;
+        color: @new_ThemeColor !important;
+      }
+    }
+  }
+}
+.aside-notifications {
+  .alert-bubble {
+    background-color: @new_AlertBubbleColor !important;
+  }
+}

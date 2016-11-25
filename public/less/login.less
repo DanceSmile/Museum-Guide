@@ -1,0 +1,115 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- 2.13 Login Page --*/
+@login_width: 300px;
+.login-page {
+    background-color: #343843;
+}
+
+.login-branding {
+    width: @login_width;
+    margin: auto;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.login-container {
+    width: @login_width;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    .rounded(4px);
+    .login-img-card {
+        width: 100px;
+        height: 100px;
+        .rounded(100%);
+        margin: 0px 20px 20px 20px;
+    }
+    .form-signin {
+        text-align: left;
+    }
+    .forgot-password {
+        text-align: left;
+        display: block;
+        padding-top: 10px;
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
+    .checkbox {
+        label {
+            padding-left: 0px;
+            color: #666;
+        }
+    }
+    .switchery {
+        margin-right: 6px;
+    }
+    .btn-signin {
+        padding: 10px;
+    }
+    .form-control {
+        margin-bottom: 10px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        .rounded(0px);
+        .box-shadow(none);
+        padding-right: 0px;
+        padding-left: 0px;
+        &:focus {
+            background-color: #fff !important;
+            .box-shadow(none) !important;
+        }
+    }
+}
+
+.create-account {
+    width: @login_width;
+    margin: auto;
+    text-align: center;
+    a {
+        padding: 10px;
+        display: block;
+        color: #ddd;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        &:hover, &:focus {
+            text-decoration: none;
+            color: @ThemeColor;
+        }
+    }
+}
+
+.login-footer {
+    width: @login_width;
+    padding: 20px 0px;
+    margin: auto;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    i {
+        color: @ThemeColor;
+        padding: 0px 4px;
+    }
+    a {
+        padding: 0px 5px;
+        color: #ddd;
+        font-weight: 500;
+        &:hover, &:focus {
+            text-decoration: none;
+            color: @ThemeColor;
+        }
+    }
+}
+
+.login-label {
+    left: 0px !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}

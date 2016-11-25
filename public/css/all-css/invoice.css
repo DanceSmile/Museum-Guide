@@ -1,0 +1,64 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.15 Invoice --*/
+.invoice-container {
+  margin: 0px -15px;
+  background-color: #fff;
+  padding: 30px 15px;
+}
+.invoice-info {
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0px 20px 0px;
+}
+.invoice-info label {
+  display: inline-block;
+  width: 10em;
+}
+.invoice-toolbar {
+  margin-bottom: 20px;
+}
+.invoice-toolbar .btn-toolbar {
+  text-align: right;
+}
+.invoice-toolbar .btn-toolbar .btn-group {
+  float: right;
+}
+.invoice-title label {
+  font-size: 12px;
+  font-weight: 500;
+}
+.invoice-cal td span {
+  display: block;
+  text-align: right;
+}
+.amount-due {
+  font-size: 18px !important;
+  padding: 10px 0;
+}
+.invoice-type {
+  width: 100px;
+}
+.invoice-qty {
+  width: 50px;
+  text-align: center !important;
+}
+.invoice-amount,
+.invoice-unit {
+  text-align: right !important;
+  width: 100px;
+}
+@media print {
+  .invoice-page .page-content {
+    margin-left: 0px !important;
+  }
+  .invoice-page .top-bar,
+  .invoice-page .left-aside,
+  .invoice-page .right-aside {
+    display: none !important;
+  }
+}

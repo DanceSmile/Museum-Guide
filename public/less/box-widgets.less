@@ -1,0 +1,326 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- 2.1 Box Widget / .box-widget --*/
+
+.box-widget {
+    margin-bottom: 30px;
+    .bordered(@WidgetBorder, @WidgetBorder, @WidgetBorder, @WidgetBorder);
+    background: @WidgetBg;
+    .rounded(@WidgetRound);
+    .widget-head {
+        position: relative;
+        height: @WidgetHeaderHieght;
+        border-bottom: @WidgetHeadBottomBorder 1px solid;
+        .border-radius(@WidgetRound, 0, 0, @WidgetRound);
+        background: @WidgetHeaderBg;
+        h4 {
+            margin: 0px;
+            display: inline-block;
+            float: left;
+            padding-left: 20px;
+            font-size: @WidgetHeaderTextSize;
+            line-height: @WidgetHeaderHieght;
+            color: @WidgetHeaderTextColor;
+        }
+    }
+    .h-icon {
+        display: inline-block;
+        float: left;
+        text-align: center;
+        height: @WidgetHeaderHieght;
+        width: @WidgetHeaderHieght;
+        border-right: @WidgetBorder 1px solid;
+        line-height: @WidgetHeaderHieght;
+        i {
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+            line-height: @WidgetHeaderHieght;
+            height: @WidgetHeaderHieght;
+            width: @WidgetHeaderHieght;
+            color: @WidgetFontColor;
+        }
+    }
+    .widget-action-bar {
+        margin-left: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+        li {
+            list-style: none;
+            display: inline-block;
+            float: left;
+            .widget-switch {
+                margin-top: 16px;
+                margin-right: 17px;
+                margin-left: 12px;
+            }
+            .widget-check {
+                margin-top: 17px;
+                margin-right: 18px;
+                margin-left: 12px;
+            }
+            & > span {
+                display: inline-block;
+                &.w-collapse {
+                    height: @WidgetHeaderHieght;
+                    width: @WidgetHeaderHieght;
+                    color: @WidgetHeaderTextColor;
+                    border-left: @WidgetBorder 1px solid;
+                    color: @WidgetFontColor;
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        color: @ThemeColor;
+                        cursor: pointer;
+                    }
+                    i {
+                        height: @WidgetHeaderHieght;
+                        width: @WidgetHeaderHieght;
+                        display: inline-block;
+                        line-height: @WidgetHeaderHieght;
+                        text-align: center;
+                        font-size: 16px;
+                    }
+                }
+                &.w-reload {
+                    height: @WidgetHeaderHieght;
+                    width: @WidgetHeaderHieght;
+                    color: @WidgetHeaderTextColor;
+                    border-left: @WidgetBorder 1px solid;
+                    color: @WidgetFontColor;
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        color: @ThemeColor;
+                        cursor: pointer;
+                    }
+                    i {
+                        height: @WidgetHeaderHieght;
+                        width: @WidgetHeaderHieght;
+                        display: inline-block;
+                        line-height: @WidgetHeaderHieght;
+                        text-align: center;
+                        font-size: 14px;
+                    }
+                }
+                &.w-remove {
+                    height: @WidgetHeaderHieght;
+                    width: @WidgetHeaderHieght;
+                    color: @WidgetHeaderTextColor;
+                    border-left: @WidgetBorder 1px solid;
+                    color: @WidgetFontColor;
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        color: @ThemeColor;
+                        cursor: pointer;
+                    }
+                    i {
+                        height: @WidgetHeaderHieght;
+                        width: @WidgetHeaderHieght;
+                        display: inline-block;
+                        line-height: @WidgetHeaderHieght;
+                        text-align: center;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+        }
+        .widget-remove {
+            i {
+                position: relative;
+                top: 0px;
+                font-size: 18px;
+            }
+        }
+        .widget-collapse {
+            i {
+                position: relative;
+                top: 0px;
+                font-size: 22px;
+            }
+        }
+    }
+    .widget-container {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+}
+/*-- 2.1.0 Border Less Box Widget / .box-widget.no-border --*/
+
+.box-widget.no-border {
+    .widget-head {
+        border-bottom: none;
+        background: transparent;
+        .box-shadow(none);
+        h4 {
+            padding-left: 20px;
+        }
+        .h-icon {
+            height: @WidgetHeaderHieght;
+            width: auto;
+            margin-left: 20px;
+            border-right: none;
+            .box-shadow(none);
+            i {
+                height: @WidgetHeaderHieght;
+                width: auto;
+            }
+        }
+        .widget-action-bar {
+            margin-left: 0px;
+            margin-right: 7px;
+            margin-bottom: 0px;
+            padding: 0px;
+            li {
+                list-style: none;
+                display: inline-block;
+                float: left;
+                .widget-switch {
+                    margin-top: 16px;
+                    margin-right: 17px;
+                }
+                .widget-check {
+                    margin-top: 16px;
+                    margin-right: 12px;
+                }
+                & > span {
+                    &.w-collapse {
+                        height: 30px;
+                        width: 30px;
+                        margin-top: 13px;
+                        margin-right: 3px;
+                        display: inline-block;
+                        color: @WidgetHeaderTextColor;
+                        .rounded(30px);
+                        border-left: none;
+                        .box-shadow(none);
+                        &:hover, &:focus {
+                            text-decoration: none;
+                            color: @ThemeColor;
+                            cursor: pointer;
+                        }
+                        i {
+                            height: 30px;
+                            width: 30px;
+                            display: inline-block;
+                            line-height: 32px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                    }
+                    &.w-reload {
+                        height: 30px;
+                        width: 30px;
+                        margin-top: 12px;
+                        margin-right: 3px;
+                        display: inline-block;
+                        color: @WidgetHeaderTextColor;
+                        .rounded(30px);
+                        border-left: none;
+                        .box-shadow(none);
+                        &:hover, &:focus {
+                            text-decoration: none;
+                            color: @ThemeColor;
+                            cursor: pointer;
+                        }
+                        i {
+                            height: 30px;
+                            width: 30px;
+                            display: inline-block;
+                            line-height: 32px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                    }
+                    &.w-remove {
+                        height: 30px;
+                        width: 30px;
+                        margin-top: 13px;
+                        margin-right: 3px;
+                        display: inline-block;
+                        color: @WidgetHeaderTextColor;
+                        .rounded(30px);
+                        border-left: none;
+                        .box-shadow(none);
+                        &:hover, &:focus {
+                            text-decoration: none;
+                            color: @ThemeColor;
+                            cursor: pointer;
+                        }
+                        i {
+                            height: 30px;
+                            width: 30px;
+                            display: inline-block;
+                            line-height: 32px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .widget-remove {
+                i {
+                    position: relative;
+                    top: -2px;
+                    font-size: 18px;
+                }
+            }
+            .widget-collapse {
+                i {
+                    position: relative;
+                    top: -2px;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+.widget-block {
+    padding: 20px;
+    .page-header {
+        margin-top: 0px;
+        h2 {
+            font-weight: 300;
+            margin-top: 0px;
+        }
+    }
+    table {
+        margin-bottom: 0px;
+    }
+}
+
+.td-no-block {
+    .widget-block {
+        padding: 0px;
+    }
+}
+
+.box-widget {
+    .task-list-toolbar, .note-list-toolbar, .email-list-toolbar {
+        position: relative !important;
+        width: auto !important;
+        border-right: 0px !important;
+    }
+    .task-list,
+    .email-list {
+        padding-top: 0px !important;
+    }
+    .task-check-all,
+    .mail-check-all {
+        width: 36px !important;
+        padding: 8px 0px 11px 4px !important;
+    }
+    .task-list-action,
+    .email-list-action {
+        width: 34px !important;
+        padding-left: 3px !important;
+    }
+    .list-scroll-container {
+        height: 300px;
+        overflow: auto;
+    }
+    .table{
+        margin-bottom: 0px;
+    }
+}
