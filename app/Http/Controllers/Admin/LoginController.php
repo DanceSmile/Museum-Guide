@@ -14,7 +14,6 @@ class LoginController extends Controller
 
     // 显示登陆模板
     public function login(){
-        echo md5("houhaidong123");
 
 
         return view("admin.login");
@@ -44,6 +43,10 @@ class LoginController extends Controller
 
     
 
+        
+
+
+
         // 实例化UserModel模型
         $userModel = new User();
         
@@ -71,12 +74,10 @@ class LoginController extends Controller
         }
 
 
-        p($password);
-        p($user->password);
-        p( bcrypt("admin"));
-        $password = bcrypt($password);
+     
+        $bool = password_verify($password);
 
-         dd($password);
+        
           
         if($password == $user->password){
 
@@ -88,7 +89,6 @@ class LoginController extends Controller
         }
 
         
-
 
 
     }
