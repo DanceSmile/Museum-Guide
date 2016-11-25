@@ -1,0 +1,75 @@
+/*-- 1.2 Iconic Left Nav / .iconic-view .left-aside --*/
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.iconic-view .left-aside {
+  width: 60px;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.iconic-view .left-aside .left-navigation li {
+  position: relative;
+}
+.iconic-view .left-aside .left-navigation > ul > li .nav-label {
+  display: none;
+}
+.iconic-view .left-aside .left-navigation > ul > li > a {
+  padding: 0px;
+}
+.iconic-view .left-aside .left-navigation > ul > li > a:hover {
+  cursor: pointer;
+}
+.iconic-view .left-aside .left-navigation > ul > li .nav-icon {
+  padding: 0px;
+  width: 60px;
+  height: 60px;
+  display: block;
+  line-height: 60px;
+  text-align: center;
+  font-size: 18px;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.iconic-view .left-aside .left-navigation > ul > li .nav-icon i {
+  position: relative;
+  left: -3px;
+}
+.iconic-view .left-aside .left-navigation ul ul {
+  display: none !important;
+}
+.iconic-view .page-content {
+  margin-left: 60px;
+}
+.iconic-view .dcjq-icon {
+  display: none;
+}
+.iconic-view .left-navigation {
+  overflow: hidden;
+}
+.dcjq-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 14px;
+  top: 15px;
+}
+.dcjq-icon:after {
+  content: "\f105";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  right: -6px;
+}
+.dcjq-parent.active .dcjq-icon:after {
+  content: "\f107";
+  font-family: 'FontAwesome';
+}

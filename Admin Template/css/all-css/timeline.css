@@ -1,0 +1,138 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.12 Timeline --*/
+.t-bg-green {
+  background-color: #66bb6a;
+}
+.t-bg-blue {
+  background-color: #26c6da;
+}
+.t-bg-orange {
+  background-color: #c16a1c;
+}
+.t-bg-gray {
+  background-color: #b5b5b5;
+}
+.t-bg-violet {
+  background-color: #ab56e7;
+}
+.t-bg-tur {
+  background-color: #26a69a;
+}
+.t-bg-brown {
+  background-color: #4e342e;
+}
+.activities-timeline {
+  padding-left: 45px;
+}
+.activities-list {
+  position: relative;
+  list-style: none;
+  padding: 30px 20px 30px 0px;
+  margin: 0px;
+}
+.activities-list:after {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: #e5e5e5;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+}
+.activities-list > li {
+  display: table;
+  padding: 15px 0px;
+}
+.activities-list > li > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.activities-list > li > div.activities-badge {
+  width: 40px;
+  height: 40px;
+  padding-right: 20px;
+}
+.activities-list > li > div.activities-badge span {
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: #15bdc3;
+  border: #e5e5e5 3px solid;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  position: relative;
+  z-index: 100;
+}
+.activities-list > li > div.activities-details {
+  border: #eee 1px solid;
+  padding: 20px;
+  position: relative;
+}
+.activities-list > li > div.activities-details .activities-header {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 6px;
+}
+.activities-list > li > div.activities-details .activities-header a {
+  color: #444;
+}
+.activities-list > li > div.activities-details .activities-header a:hover,
+.activities-list > li > div.activities-details .activities-header a:focus {
+  text-decoration: none;
+  color: #15bdc3;
+}
+.activities-list > li > div.activities-details .activities-meta {
+  margin-bottom: 6px;
+  color: #888;
+}
+.activities-list > li > div.activities-details p {
+  margin-bottom: 0px;
+  color: #666;
+}
+.activities-list > li > div.activities-details:after,
+.activities-list > li > div.activities-details:before {
+  right: 100%;
+  top: 20px;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.activities-list > li > div.activities-details:after {
+  border-right-color: #fff;
+  border-width: 6px;
+  margin-top: -6px;
+}
+.activities-list > li > div.activities-details:before {
+  border-right-color: #eee;
+  border-width: 8px;
+  margin-top: -8px;
+}
+.activities-load {
+  border-top: #eee 1px solid;
+}
+.activities-load a {
+  padding: 20px 30px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: #444;
+  font-weight: 500;
+  font-size: 12px;
+  background-color: #f9f9f9;
+}
+.activities-load a:hover,
+.activities-load a:focus {
+  text-decoration: none;
+  color: #15bdc3;
+}

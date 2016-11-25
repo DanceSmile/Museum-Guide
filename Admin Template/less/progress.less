@@ -1,0 +1,73 @@
+@import "variables.less";
+@import "mixins.less";
+
+/*-- 2.4 Progress / .progress --*/
+
+@ProgressHeight: 2px;
+@ProgressColor: #eee;
+
+.progress {
+    height: @ProgressHeight;
+    .box-shadow(none);
+    .rounded(0px);
+    background-color: @ProgressColor;
+    .progress-bar {
+        .box-shadow(none);
+    }
+}
+.progress-meta {
+    margin-bottom: 6px;
+    .progress-label {
+        font-size: 12px;
+        letter-spacing: .05em;
+        position: relative;
+        top: 5px;
+    }
+    .progress-percent {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .1em;
+    }
+    .progress-percent-multiple{
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .1em;
+    }
+    .label {
+        padding: 5px;
+    }
+}
+
+.progress-intro {
+    font-size: 12px;
+    display: block;
+    padding-bottom: 0px;
+    padding-top: 6px;
+    color: @SecondaryTextColor;
+}
+
+.epie-chart {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .percent {
+        display: inline-block;
+        z-index: 2;
+        color: @SecondaryTextColor;
+        &:after {
+            content: '%';
+            margin-left: 0.1em;
+            font-size: .8em;
+        }
+    }
+    .p-done{
+        display: inline-block;
+        z-index: 8;
+    
+    }
+}

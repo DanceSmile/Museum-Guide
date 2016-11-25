@@ -1,0 +1,344 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 5.2 Note / .note --*/
+.note {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.note-container {
+  position: relative;
+  overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.note-top-toolbar {
+  background-color: #fff;
+  border-bottom: #eee 1px solid;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 10px;
+}
+.note-top-toolbar .note-list-back {
+  display: none;
+  margin-left: 6px !important;
+}
+.note-top-toolbar .btn-group {
+  margin: 0px;
+}
+.note-sidebar {
+  width: 160px;
+  background-color: #f1f1f1;
+  position: fixed;
+  border-right: #e9e9e9 1px solid;
+  overflow-y: auto;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.note-content {
+  position: relative;
+  overflow: hidden;
+  margin-left: 160px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.note-content .note-list-wrap {
+  padding-top: 40px;
+  width: 360px;
+  height: 100%;
+  position: fixed;
+  background-color: #f9f9f9;
+  border-right: #e9e9e9 1px solid;
+  height: 300px;
+  overflow-y: auto;
+}
+.note-body {
+  margin-left: 360px;
+  position: fixed;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.hide-note-sidebar .note-sidebar {
+  left: -160px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.hide-note-sidebar .note-content {
+  margin-left: 0px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.note-box-list {
+  margin: 0px;
+  padding: 0px;
+}
+.note-box-list li {
+  list-style: none;
+}
+.note-box-list li a {
+  color: #454545;
+  display: block;
+  padding: 8px 15px;
+}
+.note-box-list li a:hover,
+.note-box-list li a:focus {
+  text-decoration: none;
+  background-color: #f9f9f9;
+  color: #15bdc3;
+}
+.note-box-list li a i {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+  margin-right: 6px;
+  width: 20px;
+  text-align: center;
+  display: inline-block;
+}
+.note-box-list li a .new-item-count {
+  display: inline-block;
+  background-color: #15bdc3;
+  color: #fff;
+  padding: 4px 6px;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+.note-list-item {
+  padding: 0px 12px;
+  width: 100%;
+  display: table;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-bottom: #f1f1f1 1px solid;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.note-list-item .note-list-date {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 4px;
+  display: block;
+  text-transform: uppercase;
+}
+.note-list-item:hover {
+  background-color: #ffffff;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.note-list-item.note-item-selected,
+.note-list-item.note-item-selected:hover,
+.note-list-item.note-item-selected:focus {
+  background-color: azure;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.note-list-item.note-important {
+  overflow: hidden;
+}
+.note-list-item.note-important .note-mark-important {
+  position: absolute;
+  right: -5px;
+  top: -20px;
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-align: center;
+}
+.note-list-item.note-important .note-mark-important i {
+  font-size: 14px;
+  position: relative;
+  left: 0px;
+  top: 15px;
+  color: #ff5722;
+}
+.note-list-item.note-pinned .pin-ribbon {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  background: #0097a7;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.note-list-item.note-pinned .pin-ribbon i {
+  position: relative;
+  top: 22px;
+  right: -15px;
+  font-size: 12px;
+  color: #fff;
+  transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  -webkit-transform: rotate(25deg);
+}
+.note-list-item ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.note-list-item .note-list-action {
+  width: 30px;
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  z-index: 9000;
+  padding-top: 10px;
+}
+.note-list-details {
+  display: table-cell;
+  vertical-align: top;
+  padding: 10px 0px 10px 0px;
+}
+.note-list-details .note-intro h4 {
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 6px;
+}
+.note-list-details .note-intro p {
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: #868686;
+}
+.note-content {
+  background-color: #fff;
+  position: relative;
+}
+.note-content h3 {
+  font-weight: 300;
+  padding: 0px 20px;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+.note-content .note-body {
+  z-index: 6000;
+  overflow-y: visible;
+}
+.note-content .note-body.full-screen {
+  z-index: 8000;
+}
+.note-content .note-content-body {
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.note-content .note-content-body .note-editor {
+  border: 0px;
+}
+.note-list-toolbar {
+  width: 360px;
+  height: 40px;
+  padding: 0px 10px;
+  border-bottom: #e5e5e5 1px solid;
+  border-right: #e5e5e5 1px solid;
+  position: fixed;
+  z-index: 1800;
+  background-color: #f5f5f5;
+}
+.note-list-toolbar .note-check-all {
+  width: 32px;
+  padding: 8px 0px 11px 2px;
+}
+.note-list-toolbar .btn-toolbar {
+  padding: 0px 4px;
+}
+.note-list-toolbar .btn-group .btn {
+  border: none;
+  height: 39px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.note-list-toolbar .btn-group .btn:hover,
+.note-list-toolbar .btn-group .btn:focus {
+  background-color: #eee;
+}
+.note-list-toolbar .dropdown-menu {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: 0px;
+}
+.list-search-form {
+  background-color: #fff;
+  width: 360px;
+  height: 40px;
+  position: fixed;
+  margin-left: -10px;
+  padding-right: -10px;
+  z-index: 2000;
+  display: none;
+}
+.list-search-form .list-search-input {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  padding-right: 35px;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.list-search-form .list-search-input:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.list-search-form .s-input-close {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.note .top-bar {
+  z-index: 7000;
+}
+.note .modal-backdrop {
+  display: none;
+}
+.note .modal-dialog {
+  margin: 70px auto;
+}
+.note .left-aside {
+  z-index: 8000;
+}
+.note .right-aside {
+  z-index: 8200;
+}
+.note .mask {
+  z-index: 7800;
+}
+.note .r-mask {
+  z-index: 8100;
+}
+.tooltip {
+  z-index: 8000 !important;
+}

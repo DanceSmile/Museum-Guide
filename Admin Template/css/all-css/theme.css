@@ -1,0 +1,146 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- MatMix Theme --*/
+/*-- Leftbar --*/
+.left-aside {
+  background-color: #343843;
+}
+.left-aside .aside-branding {
+  background-color: #15bdc3;
+}
+.left-navigation li a {
+  color: #9eadb3;
+}
+.left-navigation a.active {
+  color: #15bdc3;
+}
+.left-navigation > ul > li > a {
+  color: #9eadb3;
+}
+.left-navigation > ul > li > a:hover {
+  color: #15bdc3;
+}
+.left-navigation > ul ul li a:hover {
+  color: #15bdc3;
+}
+.left-navigation .list-accordion > li > a:before {
+  background: #282c36;
+}
+/*-- Topbar --*/
+.top-bar {
+  background-color: #cfd8dc !important;
+  -webkit-box-shadow: 0 0 0px rgba(68, 68, 68, 0.2) !important;
+  -moz-box-shadow: 0 0 0px rgba(68, 68, 68, 0.2) !important;
+  box-shadow: 0 0 0px rgba(68, 68, 68, 0.2) !important;
+}
+.leftbar-action {
+  background-color: #78909c !important;
+  color: #ffffff !important;
+}
+.leftbar-action:hover,
+.leftbar-action:active,
+.leftbar-action:focus {
+  background-color: #15bdc3 !important;
+  color: #ffffff !important;
+}
+.leftbar-action-mobile {
+  background-color: #78909c !important;
+  color: #ffffff !important;
+}
+.leftbar-action-mobile:hover,
+.leftbar-action-mobile:active,
+.leftbar-action-mobile:focus {
+  background-color: #15bdc3 !important;
+  color: #ffffff !important;
+}
+.m-aside-action {
+  background-color: #78909c !important;
+}
+.top-aside-right .rightbar-action {
+  background-color: #78909c !important;
+  color: #ffffff !important;
+}
+.top-aside-right .rightbar-action:hover,
+.top-aside-right .rightbar-action:active,
+.top-aside-right .rightbar-action:focus {
+  background-color: #15bdc3 !important;
+}
+.top-bar-action .rightbar-action {
+  background-color: #78909c !important;
+}
+.top-bar-action .rightbar-action:hover,
+.top-bar-action .rightbar-action:active,
+.top-bar-action .rightbar-action:focus {
+  background-color: #15bdc3 !important;
+  color: #ffffff !important;
+}
+.top-bar-action .rightbar-action i {
+  color: #ffffff !important;
+}
+/*-- Search Bar --*/
+.desktop-search span {
+  color: #444444 !important;
+}
+.desktop-search span:hover {
+  color: #15bdc3 !important;
+}
+.mobile-search span:hover {
+  color: #15bdc3 !important;
+}
+.search-form .search-close:hover {
+  color: #15bdc3 !important;
+}
+/*-- notification-nav --*/
+.notification-nav > ul > li > a {
+  color: #444444 !important;
+}
+.notification-nav > ul > li > a .alert-bubble {
+  background-color: #fb8c00 !important;
+  color: #ffffff !important;
+}
+.notification-nav > ul > li > a:hover,
+.notification-nav > ul > li > a:active,
+.notification-nav > ul > li > a:focus {
+  color: #15bdc3 !important;
+}
+.user-nav ul ul > li > a:hover {
+  color: #15bdc3 !important;
+}
+.user-nav > ul > li > a {
+  color: #444444 !important;
+}
+.user-nav .dropdown {
+  border-left: rgba(0, 0, 0, 0.1) 1px solid !important;
+  border-top: rgba(0, 0, 0, 0.1) 1px solid !important;
+  border-right: rgba(0, 0, 0, 0.1) 1px solid !important;
+}
+/*-- Rightbar --*/
+.right-aside {
+  background-color: #f5f5f5 !important;
+}
+.right-aside .aside-branding {
+  background-color: #15bdc3 !important;
+}
+.aside-tab li a {
+  color: #ffffff;
+}
+.aside-tab li a:focus,
+.aside-tab li a:hover {
+  color: #f5f5f5;
+}
+.aside-tab li.active a {
+  background-color: #f5f5f5 !important;
+  color: #15bdc3;
+}
+.aside-tab li.active a:focus,
+.aside-tab li.active a:hover {
+  background-color: #f5f5f5 !important;
+  color: #15bdc3 !important;
+}
+.aside-notifications .alert-bubble {
+  background-color: #fb8c00 !important;
+}

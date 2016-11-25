@@ -1,0 +1,35 @@
+@import "variables.less";
+@import "mixins.less";
+
+/*-- 2.14 Error Page --*/
+.error-wrap {
+    background-color: #fff;
+     .box-shadow(@OuterBoxShadow);
+    padding: 40px;
+    .error-container {
+        width: 60%;
+        margin: auto;
+        .error-code {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 80px;
+            font-weight: 500;
+            color: #fff;
+            .rounded(100%);
+            background-color: @ThemeColor;
+            margin: 0px auto 40px auto;
+           
+        }
+        .error-searchbox{
+            margin-top: 10px;
+        }
+        .error-message{
+            h4{
+                font-size: 24px;
+                color: #e57373;
+            }
+        }
+    }
+}

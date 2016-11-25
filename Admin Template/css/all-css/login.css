@@ -1,0 +1,124 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.13 Login Page --*/
+.login-page {
+  background-color: #343843;
+}
+.login-branding {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  padding: 10px 0px;
+}
+.login-container {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.login-container .login-img-card {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  margin: 0px 20px 20px 20px;
+}
+.login-container .form-signin {
+  text-align: left;
+}
+.login-container .forgot-password {
+  text-align: left;
+  display: block;
+  padding-top: 10px;
+}
+.login-container .forgot-password:hover,
+.login-container .forgot-password:focus {
+  text-decoration: none;
+}
+.login-container .checkbox label {
+  padding-left: 0px;
+  color: #666;
+}
+.login-container .switchery {
+  margin-right: 6px;
+}
+.login-container .btn-signin {
+  padding: 10px;
+}
+.login-container .form-control {
+  margin-bottom: 10px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.login-container .form-control:focus {
+  background-color: #fff !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.create-account {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+.create-account a {
+  padding: 10px;
+  display: block;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.create-account a:hover,
+.create-account a:focus {
+  text-decoration: none;
+  color: #15bdc3;
+}
+.login-footer {
+  width: 300px;
+  padding: 20px 0px;
+  margin: auto;
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+}
+.login-footer i {
+  color: #15bdc3;
+  padding: 0px 4px;
+}
+.login-footer a {
+  padding: 0px 5px;
+  color: #ddd;
+  font-weight: 500;
+}
+.login-footer a:hover,
+.login-footer a:focus {
+  text-decoration: none;
+  color: #15bdc3;
+}
+.login-label {
+  left: 0px !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}

@@ -1,0 +1,497 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.2 Page Tab / .main-tab --*/
+.main-tab {
+  margin-left: -15px;
+  margin-right: -15px;
+  border-bottom: #eeeeee 1px solid;
+}
+.main-tab li:first-child {
+  padding-left: 15px;
+}
+.main-tab li a {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  line-height: 56px;
+  color: #444444;
+  outline: none;
+  border-left: #eeeeee 1px solid;
+  border-right: #eeeeee 1px solid;
+  border-top: #eeeeee 1px solid;
+  font-weight: 500;
+}
+.main-tab li a i {
+  font-size: 20px;
+  position: relative;
+  top: 1px;
+  margin-bottom: -5px;
+}
+.main-tab-content {
+  margin: 0px -30px;
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: #eeeeee 1px solid;
+  margin-bottom: 20px;
+}
+.main-tab .active a,
+.main-tab  > .active  > a:hover {
+  cursor: pointer !important;
+  color: #15bdc3 !important;
+  border-bottom: 0 !important;
+  border-left: #eeeeee 1px solid !important;
+  border-right: #eeeeee 1px solid !important;
+  border-top: #eeeeee 1px solid !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.main-tab.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 15px 20px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.main-tab.nav > li > a:hover {
+  background-color: transparent;
+  border-left: #eeeeee 1px solid;
+  border-right: #eeeeee 1px solid;
+  border-top: #eeeeee 1px solid;
+  color: #15bdc3 !important;
+}
+.main-tab.nav li.active a:hover {
+  background-color: #fff;
+}
+.main-tab.nav li {
+  margin-bottom: -2px;
+}
+/*-- 2.2.0 Section Tab / .tab-widget --*/
+.tab-widget .nav-tabs {
+  border-bottom: none !important;
+}
+.tab-widget .nav-tabs > li > a {
+  height: 56px;
+  padding: 4px 20px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  margin: 0px;
+  display: inline-block;
+  line-height: 49px;
+  color: #444444;
+  background: transparent;
+}
+.tab-widget .nav-tabs > li > a i {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+.tab-widget .nav-tabs > li > a:hover {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+  color: #15bdc3;
+}
+.tab-widget .nav-tabs > li.active > a {
+  height: 56px;
+  color: #15bdc3;
+  background: #ffffff;
+}
+.tab-widget .pull-right {
+  margin-bottom: 0px;
+}
+.tab-widget .pull-right > li > a {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 1px solid #eeeeee !important;
+  border-right: 0px !important;
+}
+.tab-widget .pull-right > li > a:hover {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 1px solid #eeeeee !important;
+}
+.tab-widget .pull-right > li:last-child a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .pull-left {
+  margin-bottom: 0px;
+}
+.tab-widget .pull-left > li > a {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px !important;
+  border-right: 1px solid #eeeeee !important;
+}
+.tab-widget .pull-left > li > a:hover {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px !important;
+}
+.tab-widget .pull-left > li:last-child a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.widget-head .nav-tabs > li.active > a:focus {
+  border: none;
+}
+/*-- 2.2.1 Box Tab / .box-tab --*/
+.box-tab {
+  border: #eeeeee 1px solid;
+  position: relative;
+  margin-bottom: 20px;
+  background: #ffffff;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.box-tab .tab-content {
+  min-height: 400px;
+  margin-left: 56px;
+  padding: 15px;
+}
+.box-tab .nav-tabs {
+  width: 56px;
+  height: 100%;
+  margin: 0px;
+  position: absolute;
+  background: #f9f9f9;
+  border-bottom: 0px;
+  border-right: #eeeeee 1px solid;
+}
+.box-tab .tabs-left > .nav-tabs {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.box-tab .tabs-left > .nav-tabs > li {
+  margin-bottom: 0px;
+}
+.box-tab .tabs-left > .nav-tabs > li > a {
+  min-width: 56px !important;
+  height: 56px;
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  line-height: 56px;
+  text-align: center;
+  background: #f9f9f9;
+  border-left: 0px;
+  color: #454545;
+  border-right: #eeeeee 1px solid !important;
+  border-top: #eeeeee 1px solid;
+}
+.box-tab .tabs-left > .nav-tabs > li > a:hover {
+  color: #15bdc3;
+}
+.box-tab .tabs-left > .nav-tabs > li:first-child > a {
+  border-top: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.box-tab .tabs-left > .nav-tabs > li.active > a {
+  background: #ffffff;
+  border-right: #ffffff 1px solid !important;
+  color: #15bdc3;
+}
+.box-tab .tabs-left > .nav-tabs > li:last-child.active > a {
+  border-bottom: #eeeeee 1px solid !important;
+}
+/*-- 2.2.2 Bottom Tab / .tab-bottom --*/
+.widget-head.tab-bottom {
+  border-top: #eeeeee 1px solid;
+  border-bottom: none !important;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .tab-bottom .nav-tabs > li.active > a {
+  background: #FFFFFF;
+  color: #15bdc3;
+  height: 56px;
+  margin-top: -1px;
+  cursor: pointer;
+}
+.tab-widget .tab-bottom .nav-tabs > li:last-child > a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+/*-- 2.2.3 Left Tab / .tab-widget --*/
+.tab-widget .tab-left {
+  display: inline-block;
+  float: left;
+  width: 150px;
+  height: auto !important;
+  border-right: #eeeeee 1px solid;
+}
+.tab-widget .tab-left .nav-tabs > li.active > a {
+  height: 56px;
+  color: #15bdc3;
+  background: #ffffff;
+  margin-right: -1px;
+  cursor: pointer;
+}
+.tab-widget .tab-left .nav-tabs > li.active > a:hover,
+.tab-widget .tab-left .nav-tabs > li.active > a:focus {
+  color: #15bdc3;
+}
+.tab-widget .tab-left .nav-tabs > li:first-child > a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .tab-left .nav-tabs > li:last-child > a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .widget-head.tab-left {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .tab-right {
+  display: inline-block;
+  float: right;
+  width: 150px;
+  height: auto !important;
+  border-left: #eeeeee 1px solid;
+}
+.tab-widget .tab-right .nav-tabs > li.active > a {
+  margin-left: -1px;
+}
+.tab-widget .tab-right .nav-tabs > li:first-child > a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .tab-right .nav-tabs > li:last-child > a {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .widget-head.tab-right {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.tab-widget .nav-tabs li a i {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.tab-widget .tab-left .nav-tabs  > li,
+.nav-pills  > li,
+.tab-widget .tab-right .nav-tabs  > li,
+.nav-pills  > li {
+  float: none !important;
+}
+.tab-widget .tab-left .nav-tabs  > li  > a,
+.tab-widget .tab-right .nav-tabs  > li  > a {
+  display: block !important;
+  border-top: 0px;
+  border-bottom: #eeeeee 1px solid !important;
+  border-right: 0px;
+  border-left: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  margin: 0px;
+}
+.tab-widget .tab-left .nav-tabs  > li  > a:hover,
+.tab-widget .tab-right .nav-tabs  > li  > a:hover {
+  border-top: 0px;
+  border-bottom: #eeeeee 1px solid;
+  border-left: 0px;
+  color: #15bdc3;
+}
+.tab-widget .tab-left .nav-tabs  > li,
+.tab-widget .tab-right .nav-tabs  > li {
+  margin-bottom: 0px;
+}
+.nav-tabs > li > a:hover {
+  border-color: transparent;
+}
+.tabbed-aside-left .widget-container {
+  padding-left: 150px;
+}
+.tabbed-aside-right .widget-container {
+  padding-right: 150px;
+}
+.aside-tab-content {
+  padding: 20px;
+}

@@ -1,0 +1,348 @@
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-- 2.1 Box Widget / .box-widget --*/
+.box-widget {
+  margin-bottom: 30px;
+  border-top: solid 1px #eeeeee;
+  border-left: solid 1px #eeeeee;
+  border-right: solid 1px #eeeeee;
+  border-bottom: solid 1px #eeeeee;
+  background: #ffffff;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.box-widget .widget-head {
+  position: relative;
+  height: 56px;
+  border-bottom: #eeeeee 1px solid;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #f9f9f9;
+}
+.box-widget .widget-head h4 {
+  margin: 0px;
+  display: inline-block;
+  float: left;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 56px;
+  color: #444444;
+}
+.box-widget .h-icon {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  height: 56px;
+  width: 56px;
+  border-right: #eeeeee 1px solid;
+  line-height: 56px;
+}
+.box-widget .h-icon i {
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  line-height: 56px;
+  height: 56px;
+  width: 56px;
+  color: #444444;
+}
+.box-widget .widget-action-bar {
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+.box-widget .widget-action-bar li {
+  list-style: none;
+  display: inline-block;
+  float: left;
+}
+.box-widget .widget-action-bar li .widget-switch {
+  margin-top: 16px;
+  margin-right: 17px;
+  margin-left: 12px;
+}
+.box-widget .widget-action-bar li .widget-check {
+  margin-top: 17px;
+  margin-right: 18px;
+  margin-left: 12px;
+}
+.box-widget .widget-action-bar li > span {
+  display: inline-block;
+}
+.box-widget .widget-action-bar li > span.w-collapse {
+  height: 56px;
+  width: 56px;
+  border-left: #eeeeee 1px solid;
+  color: #444444;
+}
+.box-widget .widget-action-bar li > span.w-collapse:hover,
+.box-widget .widget-action-bar li > span.w-collapse:focus {
+  text-decoration: none;
+  color: #15bdc3;
+  cursor: pointer;
+}
+.box-widget .widget-action-bar li > span.w-collapse i {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  line-height: 56px;
+  text-align: center;
+  font-size: 16px;
+}
+.box-widget .widget-action-bar li > span.w-reload {
+  height: 56px;
+  width: 56px;
+  border-left: #eeeeee 1px solid;
+  color: #444444;
+}
+.box-widget .widget-action-bar li > span.w-reload:hover,
+.box-widget .widget-action-bar li > span.w-reload:focus {
+  text-decoration: none;
+  color: #15bdc3;
+  cursor: pointer;
+}
+.box-widget .widget-action-bar li > span.w-reload i {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  line-height: 56px;
+  text-align: center;
+  font-size: 14px;
+}
+.box-widget .widget-action-bar li > span.w-remove {
+  height: 56px;
+  width: 56px;
+  border-left: #eeeeee 1px solid;
+  color: #444444;
+}
+.box-widget .widget-action-bar li > span.w-remove:hover,
+.box-widget .widget-action-bar li > span.w-remove:focus {
+  text-decoration: none;
+  color: #15bdc3;
+  cursor: pointer;
+}
+.box-widget .widget-action-bar li > span.w-remove i {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  line-height: 56px;
+  text-align: center;
+  font-size: 16px;
+}
+.box-widget .widget-action-bar .widget-remove i {
+  position: relative;
+  top: 0px;
+  font-size: 18px;
+}
+.box-widget .widget-action-bar .widget-collapse i {
+  position: relative;
+  top: 0px;
+  font-size: 22px;
+}
+.box-widget .widget-container {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+/*-- 2.1.0 Border Less Box Widget / .box-widget.no-border --*/
+.box-widget.no-border .widget-head {
+  border-bottom: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.box-widget.no-border .widget-head h4 {
+  padding-left: 20px;
+}
+.box-widget.no-border .widget-head .h-icon {
+  height: 56px;
+  width: auto;
+  margin-left: 20px;
+  border-right: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.box-widget.no-border .widget-head .h-icon i {
+  height: 56px;
+  width: auto;
+}
+.box-widget.no-border .widget-head .widget-action-bar {
+  margin-left: 0px;
+  margin-right: 7px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+.box-widget.no-border .widget-head .widget-action-bar li {
+  list-style: none;
+  display: inline-block;
+  float: left;
+}
+.box-widget.no-border .widget-head .widget-action-bar li .widget-switch {
+  margin-top: 16px;
+  margin-right: 17px;
+}
+.box-widget.no-border .widget-head .widget-action-bar li .widget-check {
+  margin-top: 16px;
+  margin-right: 12px;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-collapse {
+  height: 30px;
+  width: 30px;
+  margin-top: 13px;
+  margin-right: 3px;
+  display: inline-block;
+  color: #444444;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border-left: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-collapse:hover,
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-collapse:focus {
+  text-decoration: none;
+  color: #15bdc3;
+  cursor: pointer;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-collapse i {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-reload {
+  height: 30px;
+  width: 30px;
+  margin-top: 12px;
+  margin-right: 3px;
+  display: inline-block;
+  color: #444444;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border-left: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-reload:hover,
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-reload:focus {
+  text-decoration: none;
+  color: #15bdc3;
+  cursor: pointer;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-reload i {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-remove {
+  height: 30px;
+  width: 30px;
+  margin-top: 13px;
+  margin-right: 3px;
+  display: inline-block;
+  color: #444444;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border-left: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-remove:hover,
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-remove:focus {
+  text-decoration: none;
+  color: #15bdc3;
+  cursor: pointer;
+}
+.box-widget.no-border .widget-head .widget-action-bar li > span.w-remove i {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+}
+.box-widget.no-border .widget-head .widget-action-bar .widget-remove i {
+  position: relative;
+  top: -2px;
+  font-size: 18px;
+}
+.box-widget.no-border .widget-head .widget-action-bar .widget-collapse i {
+  position: relative;
+  top: -2px;
+  font-size: 22px;
+}
+.widget-block {
+  padding: 20px;
+}
+.widget-block .page-header {
+  margin-top: 0px;
+}
+.widget-block .page-header h2 {
+  font-weight: 300;
+  margin-top: 0px;
+}
+.widget-block table {
+  margin-bottom: 0px;
+}
+.td-no-block .widget-block {
+  padding: 0px;
+}
+.box-widget .task-list-toolbar,
+.box-widget .note-list-toolbar,
+.box-widget .email-list-toolbar {
+  position: relative !important;
+  width: auto !important;
+  border-right: 0px !important;
+}
+.box-widget .task-list,
+.box-widget .email-list {
+  padding-top: 0px !important;
+}
+.box-widget .task-check-all,
+.box-widget .mail-check-all {
+  width: 36px !important;
+  padding: 8px 0px 11px 4px !important;
+}
+.box-widget .task-list-action,
+.box-widget .email-list-action {
+  width: 34px !important;
+  padding-left: 3px !important;
+}
+.box-widget .list-scroll-container {
+  height: 300px;
+  overflow: auto;
+}
+.box-widget .table {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,801 @@
+/*-- 3.2.1 Data Tables --*/
+th {
+  font-weight: 500;
+}
+div.dataTables_length label {
+  font-weight: normal;
+  text-align: left;
+  white-space: nowrap;
+}
+div.dataTables_length select {
+  width: 75px;
+  display: inline-block;
+}
+div.dataTables_filter {
+  text-align: right;
+}
+div.dataTables_filter label {
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: left;
+}
+div.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+}
+div.dataTables_info {
+  padding-top: 8px;
+  white-space: nowrap;
+}
+div.dataTables_paginate {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+div.dataTables_paginate ul.pagination {
+  margin: 2px 0;
+  white-space: nowrap;
+}
+@media screen and (max-width: 767px) {
+  div.dataTables_wrapper > div.row > div,
+  div.dataTables_length,
+  div.dataTables_filter,
+  div.dataTables_info,
+  div.dataTables_paginate {
+    text-align: center;
+  }
+  div.DTTT {
+    margin-bottom: 0.5em;
+  }
+}
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+table.dataTable {
+  clear: both;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  max-width: none !important;
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  position: relative;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: block;
+  font-family: 'Glyphicons Halflings';
+  opacity: 0.5;
+}
+table.dataTable thead .sorting:after {
+  opacity: 0.2;
+  content: "\e150";
+  /* sort */
+}
+table.dataTable thead .sorting_asc:after {
+  content: "\e155";
+  /* sort-by-attributes */
+}
+table.dataTable thead .sorting_desc:after {
+  content: "\e156";
+  /* sort-by-attributes-alt */
+}
+div.dataTables_scrollBody table.dataTable thead .sorting:after,
+div.dataTables_scrollBody table.dataTable thead .sorting_asc:after,
+div.dataTables_scrollBody table.dataTable thead .sorting_desc:after {
+  display: none;
+}
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  color: #eee;
+}
+table.dataTable thead > tr > th {
+  padding-right: 30px;
+}
+table.dataTable th:active {
+  outline: none;
+}
+/* Condensed */
+table.dataTable.table-condensed thead > tr > th {
+  padding-right: 20px;
+}
+table.dataTable.table-condensed thead .sorting:after,
+table.dataTable.table-condensed thead .sorting_asc:after,
+table.dataTable.table-condensed thead .sorting_desc:after {
+  top: 6px;
+  right: 6px;
+}
+/* Scrolling */
+div.dataTables_scrollHead table {
+  margin-bottom: 0 !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.dataTables_scrollHead table thead tr:last-child th:first-child,
+div.dataTables_scrollHead table thead tr:last-child td:first-child {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+div.dataTables_scrollBody table {
+  border-top: none;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+div.dataTables_scrollBody tbody tr:first-child th,
+div.dataTables_scrollBody tbody tr:first-child td {
+  border-top: none;
+}
+div.dataTables_scrollFoot table {
+  margin-top: 0 !important;
+  border-top: none;
+}
+/* Frustratingly the border-collapse:collapse used by Bootstrap makes the column
+   width calculations when using scrolling impossible to align columns. We have
+   to use separate
+ */
+table.table-bordered.dataTable {
+  border-collapse: separate !important;
+}
+table.table-bordered thead th,
+table.table-bordered thead td {
+  border-left-width: 0;
+  border-top-width: 0;
+}
+table.table-bordered tbody th,
+table.table-bordered tbody td {
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+table.table-bordered tfoot th,
+table.table-bordered tfoot td {
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+table.table-bordered th:last-child,
+table.table-bordered td:last-child {
+  border-right-width: 0;
+}
+div.dataTables_scrollHead table.table-bordered {
+  border-bottom-width: 0;
+}
+/*
+ * TableTools styles
+ */
+.table.dataTable tbody tr.active td,
+.table.dataTable tbody tr.active th {
+  background-color: #08C;
+  color: white;
+}
+.table.dataTable tbody tr.active:hover td,
+.table.dataTable tbody tr.active:hover th {
+  background-color: #0075b0 !important;
+}
+.table.dataTable tbody tr.active th > a,
+.table.dataTable tbody tr.active td > a {
+  color: white;
+}
+.table-striped.dataTable tbody tr.active:nth-child(odd) td,
+.table-striped.dataTable tbody tr.active:nth-child(odd) th {
+  background-color: #017ebc;
+}
+table.DTTT_selectable tbody tr {
+  cursor: pointer;
+}
+div.DTTT .btn:hover {
+  text-decoration: none !important;
+}
+ul.DTTT_dropdown.dropdown-menu {
+  z-index: 2003;
+}
+ul.DTTT_dropdown.dropdown-menu a {
+  color: #333 !important;
+  /* needed only when demo_page.css is included */
+}
+ul.DTTT_dropdown.dropdown-menu li {
+  position: relative;
+}
+ul.DTTT_dropdown.dropdown-menu li:hover a {
+  background-color: #0088cc;
+  color: white !important;
+}
+div.DTTT_collection_background {
+  z-index: 2002;
+}
+/* TableTools information display */
+div.DTTT_print_info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 150px;
+  margin-left: -200px;
+  margin-top: -75px;
+  text-align: center;
+  color: #333;
+  padding: 10px 30px;
+  opacity: 0.95;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+}
+div.DTTT_print_info h6 {
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 28px;
+  margin: 1em;
+}
+div.DTTT_print_info p {
+  font-size: 14px;
+  line-height: 20px;
+}
+div.dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 60px;
+  margin-left: -50%;
+  margin-top: -25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: white;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(255, 255, 255, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+}
+/*
+ * FixedColumns styles
+ */
+div.DTFC_LeftHeadWrapper table,
+div.DTFC_LeftFootWrapper table,
+div.DTFC_RightHeadWrapper table,
+div.DTFC_RightFootWrapper table,
+table.DTFC_Cloned tr.even {
+  background-color: white;
+  margin-bottom: 0;
+}
+div.DTFC_RightHeadWrapper table,
+div.DTFC_LeftHeadWrapper table {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+div.DTFC_RightHeadWrapper table thead tr:last-child th:first-child,
+div.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,
+div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
+div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+div.DTFC_RightBodyWrapper table,
+div.DTFC_LeftBodyWrapper table {
+  border-top: none;
+  margin: 0 !important;
+}
+div.DTFC_RightBodyWrapper tbody tr:first-child th,
+div.DTFC_RightBodyWrapper tbody tr:first-child td,
+div.DTFC_LeftBodyWrapper tbody tr:first-child th,
+div.DTFC_LeftBodyWrapper tbody tr:first-child td {
+  border-top: none;
+}
+div.DTFC_RightFootWrapper table,
+div.DTFC_LeftFootWrapper table {
+  border-top: none;
+  margin-top: 0 !important;
+}
+div.DTFC_LeftBodyWrapper table.dataTable thead .sorting:after,
+div.DTFC_LeftBodyWrapper table.dataTable thead .sorting_asc:after,
+div.DTFC_LeftBodyWrapper table.dataTable thead .sorting_desc:after,
+div.DTFC_RightBodyWrapper table.dataTable thead .sorting:after,
+div.DTFC_RightBodyWrapper table.dataTable thead .sorting_asc:after,
+div.DTFC_RightBodyWrapper table.dataTable thead .sorting_desc:after {
+  display: none;
+}
+/*
+ * FixedHeader styles
+ */
+div.FixedHeader_Cloned table {
+  margin: 0 !important;
+}
+/*
+ * File:        TableTools.css
+ * Description: Styles for TableTools 2
+ * Author:      Allan Jardine (www.sprymedia.co.uk)
+ * Language:    Javascript
+ * License:     GPL v2 / 3 point BSD
+ * Project:     DataTables
+ * 
+ * Copyright 2009-2012 Allan Jardine, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * CSS name space:
+ *   DTTT                  DataTables TableTools
+ *
+ * Style sheet provides:
+ *   CONTAINER             TableTools container element and styles applying to all components
+ *   BUTTON_STYLES         Action specific button styles
+ *   SELECTING             Row selection styles
+ *   COLLECTIONS           Drop down list (collection) styles
+ *   PRINTING              Print display styles
+ */
+/*
+ * CONTAINER
+ * TableTools container element and styles applying to all components
+ */
+div.DTTT_container {
+  position: relative;
+  float: right;
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 640px) {
+  div.DTTT_container {
+    float: none !important;
+    text-align: center;
+  }
+  div.DTTT_container:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
+}
+button.DTTT_button,
+div.DTTT_button,
+a.DTTT_button {
+  position: relative;
+  display: inline-block;
+  margin-right: 3px;
+  padding: 5px 8px;
+  border: 1px solid #999;
+  cursor: pointer;
+  *cursor: hand;
+  font-size: 0.88em;
+  color: black !important;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+  -moz-box-shadow: 1px 1px 3px #ccc;
+  -ms-box-shadow: 1px 1px 3px #ccc;
+  -o-box-shadow: 1px 1px 3px #ccc;
+  box-shadow: 1px 1px 3px #ccc;
+  /* Generated by http://www.colorzilla.com/gradient-editor/ */
+  background: #ffffff;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f9f9f9', GradientType=0);
+  /* IE6-9 */
+}
+/* Buttons are cunning border-box sizing - we can't just use that for A and DIV due to IE6/7 */
+button.DTTT_button {
+  height: 30px;
+  padding: 3px 8px;
+}
+.DTTT_button embed {
+  outline: none;
+}
+button.DTTT_button:hover:not(.DTTT_disabled),
+div.DTTT_button:hover:not(.DTTT_disabled),
+a.DTTT_button:hover:not(.DTTT_disabled) {
+  border: 1px solid #666;
+  text-decoration: none !important;
+  -webkit-box-shadow: 1px 1px 3px #999;
+  -moz-box-shadow: 1px 1px 3px #999;
+  -ms-box-shadow: 1px 1px 3px #999;
+  -o-box-shadow: 1px 1px 3px #999;
+  box-shadow: 1px 1px 3px #999;
+  background: #f3f3f3;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(top, #f3f3f3 0%, #e2e2e2 89%, #f4f4f4 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#f4f4f4', GradientType=0);
+  /* IE6-9 */
+}
+button.DTTT_button:focus,
+div.DTTT_button:focus,
+a.DTTT_button:focus {
+  border: 1px solid #426c9e;
+  text-shadow: 0 1px 0 #c4def1;
+  outline: none;
+  background-color: #a3d0ef 100%;
+  background-image: -webkit-linear-gradient(top, #a3d0ef 0%, #79ace9 65%, #a3d0ef 100%);
+  background-image: -moz-linear-gradient(top, #a3d0ef 0%, #79ace9 65%, #a3d0ef 100%);
+  background-image: -ms-linear-gradient(top, #a3d0ef 0%, #79ace9 65%, #a3d0ef 100%);
+  background-image: -o-linear-gradient(top, #a3d0ef 0%, #79ace9 65%, #a3d0ef 100%);
+  background-image: linear-gradient(top, #a3d0ef 0%, #79ace9 65%, #a3d0ef 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#a3d0ef', EndColorStr='#a3d0ef');
+}
+button.DTTT_button:active:not(.DTTT_disabled),
+div.DTTT_button:active:not(.DTTT_disabled),
+a.DTTT_button:active:not(.DTTT_disabled) {
+  -webkit-box-shadow: inset 1px 1px 3px #999999;
+  -moz-box-shadow: inset 1px 1px 3px #999999;
+  box-shadow: inset 1px 1px 3px #999999;
+}
+button.DTTT_disabled,
+div.DTTT_disabled,
+a.DTTT_disabled {
+  color: #999 !important;
+  border: 1px solid #d0d0d0;
+  cursor: default;
+  background: #ffffff;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f9f9f9 89%, #fafafa 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 89%, #fafafa 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #f9f9f9 89%, #fafafa 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #f9f9f9 89%, #fafafa 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(top, #ffffff 0%, #f9f9f9 89%, #fafafa 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fafafa', GradientType=0);
+  /* IE6-9 */
+}
+/*
+ * BUTTON_STYLES
+ * Action specific button styles
+ * If you want images - comment this back in
+
+a.DTTT_button_csv,
+a.DTTT_button_xls,
+a.DTTT_button_copy,
+a.DTTT_button_pdf,
+a.DTTT_button_print {
+	padding-right: 0px;
+}
+
+a.DTTT_button_csv span,
+a.DTTT_button_xls span,
+a.DTTT_button_copy span,
+a.DTTT_button_pdf span,
+a.DTTT_button_print span {
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+	padding-right: 30px;
+}
+
+
+a.DTTT_button_csv span { background: url(../images/csv.png) no-repeat bottom right; }
+a.DTTT_button_csv:hover span { background: url(../images/csv_hover.png) no-repeat center right; }
+
+a.DTTT_button_xls span { background: url(../images/xls.png) no-repeat center right; }
+a.DTTT_button_xls:hover span { background: #f0f0f0 url(../images/xls_hover.png) no-repeat center right; }
+
+a.DTTT_button_copy span { background: url(../images/copy.png) no-repeat center right; }
+a.DTTT_button_copy:hover span { background: #f0f0f0 url(../images/copy_hover.png) no-repeat center right; }
+
+a.DTTT_button_pdf span { background: url(../images/pdf.png) no-repeat center right; }
+a.DTTT_button_pdf:hover span { background: #f0f0f0 url(../images/pdf_hover.png) no-repeat center right; }
+
+a.DTTT_button_print span { background: url(../images/print.png) no-repeat center right; }
+a.DTTT_button_print:hover span { background: #f0f0f0 url(../images/print_hover.png) no-repeat center right; }
+
+ */
+button.DTTT_button_collection span {
+  padding-right: 17px;
+  background: url(../images/collection.png) no-repeat center right;
+}
+button.DTTT_button_collection:hover span {
+  padding-right: 17px;
+  background: #f0f0f0 url(../images/collection_hover.png) no-repeat center right;
+}
+/*
+ * SELECTING
+ * Row selection styles
+ */
+table.DTTT_selectable tbody tr {
+  cursor: pointer;
+  *cursor: hand;
+}
+table.dataTable tr.DTTT_selected.odd {
+  background-color: #9FAFD1;
+}
+table.dataTable tr.DTTT_selected.odd td.sorting_1 {
+  background-color: #9FAFD1;
+}
+table.dataTable tr.DTTT_selected.odd td.sorting_2 {
+  background-color: #9FAFD1;
+}
+table.dataTable tr.DTTT_selected.odd td.sorting_3 {
+  background-color: #9FAFD1;
+}
+table.dataTable tr.DTTT_selected.even {
+  background-color: #B0BED9;
+}
+table.dataTable tr.DTTT_selected.even td.sorting_1 {
+  background-color: #B0BED9;
+}
+table.dataTable tr.DTTT_selected.even td.sorting_2 {
+  background-color: #B0BED9;
+}
+table.dataTable tr.DTTT_selected.even td.sorting_3 {
+  background-color: #B0BED9;
+}
+/*
+ * COLLECTIONS
+ * Drop down list (collection) styles
+ */
+div.DTTT_collection {
+  width: 150px;
+  padding: 8px 8px 4px 8px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: #f3f3f3;
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: 2002;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+div.DTTT_collection_background {
+  background: black;
+  z-index: 2001;
+}
+div.DTTT_collection button.DTTT_button,
+div.DTTT_collection div.DTTT_button,
+div.DTTT_collection a.DTTT_button {
+  position: relative;
+  left: 0;
+  right: 0;
+  display: block;
+  float: none;
+  margin-bottom: 4px;
+  -webkit-box-shadow: 1px 1px 3px #999;
+  -moz-box-shadow: 1px 1px 3px #999;
+  -ms-box-shadow: 1px 1px 3px #999;
+  -o-box-shadow: 1px 1px 3px #999;
+  box-shadow: 1px 1px 3px #999;
+}
+/*
+ * PRINTING
+ * Print display styles
+ */
+.DTTT_print_info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 150px;
+  margin-left: -200px;
+  margin-top: -75px;
+  text-align: center;
+  color: #333;
+  padding: 10px 30px;
+  background: #ffffff;
+  /* Old browsers */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(top, #ffffff 0%, #f3f3f3 89%, #f9f9f9 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f9f9f9', GradientType=0);
+  /* IE6-9 */
+  opacity: 0.95;
+  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+}
+.DTTT_print_info h6 {
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 28px;
+  margin: 1em;
+}
+.DTTT_print_info p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.noty_animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+  top: 8px;
+  left: 4px;
+  height: 16px;
+  width: 16px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 14px;
+  box-shadow: 0 0 3px #444;
+  box-sizing: content-box;
+  content: '+';
+  background-color: #15bdc3;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child.dataTables_empty:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child.dataTables_empty:before {
+  display: none;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+  content: '-';
+  background-color: #d33333;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.child td:before {
+  display: none;
+}
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child,
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th:first-child {
+  padding-left: 27px;
+}
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th:first-child:before {
+  top: 5px;
+  left: 4px;
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  line-height: 12px;
+}
+table.dataTable.dtr-column > tbody > tr > td.control,
+table.dataTable.dtr-column > tbody > tr > th.control {
+  position: relative;
+  cursor: pointer;
+}
+table.dataTable.dtr-column > tbody > tr > td.control:before,
+table.dataTable.dtr-column > tbody > tr > th.control:before {
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  width: 16px;
+  margin-top: -10px;
+  margin-left: -10px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 14px;
+  box-shadow: 0 0 3px #444;
+  box-sizing: content-box;
+  content: '+';
+  background-color: #15bdc3;
+}
+table.dataTable.dtr-column > tbody > tr.parent td.control:before,
+table.dataTable.dtr-column > tbody > tr.parent th.control:before {
+  content: '-';
+  background-color: #d33333;
+}
+table.dataTable > tbody > tr.child {
+  padding: 0.5em 1em;
+}
+table.dataTable > tbody > tr.child:hover {
+  background: transparent !important;
+}
+table.dataTable > tbody > tr.child ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+table.dataTable > tbody > tr.child ul li {
+  border-bottom: 1px solid #efefef;
+  padding: 0.5em 0;
+}
+table.dataTable > tbody > tr.child ul li:first-child {
+  padding-top: 0;
+}
+table.dataTable > tbody > tr.child ul li:last-child {
+  border-bottom: none;
+}
+table.dataTable > tbody > tr.child span.dtr-title {
+  display: inline-block;
+  min-width: 75px;
+  font-weight: bold;
+}
+/*-- 3.2.2 Responsive Stack Tables  --*/
+.stacktable {
+  width: 100%;
+}
+.st-head-row {
+  padding-top: 1em;
+}
+.st-head-row.st-head-row-main {
+  font-size: 1.5em;
+  padding-top: 0;
+}
+.st-key {
+  width: 49%;
+  text-align: right;
+  padding-right: 1%;
+}
+.st-val {
+  width: 49%;
+  padding-left: 1%;
+}
+/* RESPONSIVE EXAMPLE */
+.stacktable.large-only {
+  display: table;
+}
+.stacktable.small-only {
+  display: none;
+}
+@media (max-width: 800px) {
+  .stacktable.large-only {
+    display: none;
+  }
+  .stacktable.small-only {
+    display: table;
+  }
+}

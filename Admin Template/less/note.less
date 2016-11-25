@@ -1,0 +1,335 @@
+@import "variables.less";
+@import "mixins.less";
+/*-- 5.2 Note / .note --*/
+
+.note {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.note-container {
+    position: relative;
+    overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.note-top-toolbar {
+    background-color: #fff;
+    border-bottom: #eee 1px solid;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px;
+    .note-list-back {
+        display: none;
+        margin-left: 6px !important;
+    }
+    .btn-group {
+        margin: 0px;
+    }
+}
+
+.note-sidebar {
+    width: 160px;
+    background-color: @InboxSidebarBg;
+    position: fixed;
+    border-right: #e9e9e9 1px solid;
+    overflow-y: auto;
+    .transition(.2s, ease-out);
+}
+
+.note-content {
+    position: relative;
+    overflow: hidden;
+    margin-left: 160px;
+    .transition(.2s, ease-out);
+    .note-list-wrap {
+        padding-top: 40px;
+        width: @MailListWidth;
+        height: 100%;
+        position: fixed;
+        background-color: @EmailListBg;
+        border-right: #e9e9e9 1px solid;
+        height: 300px;
+        overflow-y: auto;
+    }
+}
+
+.note-body {
+    margin-left: @MailListWidth;
+    position: fixed;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.hide-note-sidebar {
+    .note-sidebar {
+        left: -160px;
+        .transition(.2s, ease-out);
+    }
+    .note-content {
+        margin-left: 0px;
+        .transition(.2s, ease-out);
+    }
+}
+
+.note-box-list {
+    margin: 0px;
+    padding: 0px;
+    li {
+        list-style: none;
+        a {
+            color: @PrimaryTextColor;
+            display: block;
+            padding: 8px 15px;
+            &:hover, &:focus {
+                text-decoration: none;
+                background-color: @EmailListBg;
+                color: @ThemeColor;
+            }
+            i {
+                font-size: 16px;
+                position: relative;
+                top: 2px;
+                margin-right: 6px;
+                width: 20px;
+                text-align: center;
+                display: inline-block;
+            }
+            .new-item-count {
+                display: inline-block;
+                background-color: @ThemeColor;
+                color: #fff;
+                padding: 4px 6px;
+                font-size: 12px;
+                .rounded(3px);
+                margin-left: 6px;
+            }
+        }
+    }
+}
+
+.note-list-item {
+    padding: 0px 12px;
+    width: 100%;
+    display: table;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-bottom: #f1f1f1 1px solid;
+    .note-list-date {
+        font-size: 11px;
+        color: #888;
+        margin-bottom: 4px;
+        display: block;
+        text-transform: uppercase;
+    }
+    .transition(.2s,
+    ease-out);
+    &:hover {
+        background-color: #ffffff;
+        .transition(.2s, ease-out);
+    }
+    &.note-item-selected,
+    &.note-item-selected:hover,
+    &.note-item-selected:focus {
+        background-color: azure;
+        .transition(.2s, ease-out);
+    }
+    &.note-important {
+        overflow: hidden;
+        .note-mark-important {
+            position: absolute;
+            right: -5px;
+            top: -20px;
+            width: 32px;
+            height: 32px;
+            display: block;
+            text-align: center;
+            i {
+                font-size: 14px;
+                position: relative;
+                left: 0px;
+                top: 15px;
+                color: #ff5722;
+            }
+        }
+    }
+    &.note-pinned {
+        .pin-ribbon {
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            background: #0097a7;
+            width: 40px;
+            height: 40px;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            i {
+                position: relative;
+                top: 22px;
+                right: -15px;
+                font-size: 12px;
+                color: #fff;
+                transform: rotate(25deg);
+                -ms-transform: rotate(25deg);
+                -webkit-transform: rotate(25deg);
+            }
+        }
+    }
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .note-list-action {
+        width: 30px;
+        display: table-cell;
+        vertical-align: top;
+        position: relative;
+        z-index: 9000;
+        padding-top: 10px;
+    }
+}
+
+.note-list-details {
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px 0px 10px 0px;
+    .note-intro {
+        h4 {
+            font-size: 12px;
+            margin-top: 0px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin-bottom: 0px;
+            font-size: 12px;
+            color: @SecondaryTextColor;
+        }
+    }
+}
+
+.note-content {
+    background-color: #fff;
+    position: relative;
+    h3 {
+        font-weight: 300;
+        padding: 0px 20px;
+        margin-bottom: 0px;
+        font-size: 18px;
+    }
+    .note-body {
+        z-index: 6000;
+        overflow-y: visible;
+    }
+    .note-body.full-screen {
+        z-index: 8000;
+    }
+    .note-content-body {
+        padding: 0px 0px;
+        margin: 0px 0px;
+        .note-editor {
+            border: 0px;
+        }
+    }
+}
+
+.note-list-toolbar {
+    width: @MailListWidth;
+    height: 40px;
+    padding: 0px 10px;
+    border-bottom: #e5e5e5 1px solid;
+    border-right: #e5e5e5 1px solid;
+    position: fixed;
+    z-index: 1800;
+    background-color: #f5f5f5;
+    .note-check-all {
+        width: 32px;
+        padding: 8px 0px 11px 2px;
+    }
+    .btn-toolbar {
+        padding: 0px 4px;
+    }
+    .btn-group {
+        .btn {
+            border: none;
+            height: 39px;
+            .rounded(0px);
+            &:hover, &:focus {
+                background-color: #eee;
+            }
+        }
+    }
+    .dropdown-menu {
+        .rounded(0px);
+        margin-top: 0px;
+    }
+}
+
+.list-search-form {
+    background-color: #fff;
+    width: @MailListWidth;
+    height: 40px;
+    position: fixed;
+    margin-left: -10px;
+    padding-right: -10px;
+    z-index: 2000;
+    .list-search-input {
+        .rounded(0px);
+        padding-right: 35px;
+        border-left: transparent;
+        border-right: transparent;
+        border-top: transparent;
+        .box-shadow(none);
+        &:focus {
+            .box-shadow(none);
+        }
+    }
+    display: none;
+    .s-input-close {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        text-align: center;
+        line-height: 32px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+.note .top-bar {
+    z-index: 7000;
+}
+
+.note .modal-backdrop {
+    display: none;
+}
+
+.note .modal-dialog {
+    margin: 70px auto;
+}
+
+.note .left-aside {
+    z-index: 8000;
+}
+
+.note .right-aside {
+    z-index: 8200;
+}
+
+.note .mask {
+    z-index: 7800;
+}
+
+.note .r-mask {
+    z-index: 8100;
+}
+
+.tooltip {
+    z-index: 8000 !important;
+}
