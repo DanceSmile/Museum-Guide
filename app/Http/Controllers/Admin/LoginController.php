@@ -14,6 +14,7 @@ class LoginController extends Controller
 
     // 显示登陆模板
     public function login(){
+        echo md5("houhaidong123");
 
 
         return view("admin.login");
@@ -41,36 +42,52 @@ class LoginController extends Controller
     public function loginHandle(Request $request){
 
 
+    
+
         // 实例化UserModel模型
         $userModel = new User();
         
         // 获取用户输入的账号和密码
         $username = $request->input("username");
         $password = $request->input("password");
-       
+
+
+        // 检测用户名和密码是否为空
         if(!$username || !$password){
 
-            return  back();
+            return back()->withInput();
+
         }
 
-        // 查找数据库并且解密密码
+      
+
+        // 查找数据库用户
         $user = $userModel::where("username","=",$username)->select("password")->first();
 
-        if(!$user->password){
+
+        // 检测是都有此用户
+        if(!$user){
             return back();
         }
 
+
+        p($password);
+        p($user->password);
+        p( bcrypt("admin"));
         $password = bcrypt($password);
+
+         dd($password);
+          
         if($password == $user->password){
-             session('uid',$repassword->id);
+
+          
+             session('uid',$user->id);
              return redirect()->route("home");
         }else{
-            back();
+             return back();
         }
 
         
-
-
 
 
 
