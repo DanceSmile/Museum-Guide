@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "overtrue/wechat": "~3.1",
-        "yangyifan/upload": "dev-master"
+        "qiniu/php-sdk": "^7.1"
+        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -16,6 +17,7 @@
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*"
+
     },
     "autoload": {
         "classmap": [

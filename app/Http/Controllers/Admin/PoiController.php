@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\admin\Exhibit;
 use App\model\admin\Poi;
+use App\Http\Requests\poi as Poirequest;
 
 
 class PoiController extends Controller
@@ -40,9 +41,21 @@ class PoiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Poirequest $request)
     {
-        //
+
+
+        $data = Poi::create([
+            "exhibit_id" => $request->exhibit_id,
+            "project_id" => $request->project_id,
+            "coordinate" => $request->coordinate,
+        ]);
+
+        return response()->json($data);
+
+
+
+        
     }
 
     /**
@@ -55,9 +68,12 @@ class PoiController extends Controller
     {
 
         $data = Exhibit::where("project_id",$id)->get();
+        $poi = Poi::all();
+        $project_id = $id;
 
 
-        return view("admin.poi.show",compact("data"));
+
+        return view("admin.poi.show",compact("data","project_id","poi"));
 
     }
 
@@ -81,7 +97,11 @@ class PoiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Poi::find($id);
+
+        $data ->coordinate = $request->coordinate;
+
+        return $data->save();
     }
 
     /**
@@ -92,6 +112,8 @@ class PoiController extends Controller
      */
     public function destroy($id)
     {
-        //
+         Poi::destroy($id);
+
+         return back(); 
     }
 }

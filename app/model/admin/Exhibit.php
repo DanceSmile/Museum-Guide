@@ -34,7 +34,7 @@ class Exhibit extends Model
      // 一对一关联 点位表
     public function poi(){
 
-        return  $this->hasOne("App\model\admin\Poi","project_id","id");
+        return  $this->hasOne("App\model\admin\Poi","exhibit_id","id");
     }
 
 }

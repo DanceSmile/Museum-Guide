@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A Components Mix Bootstarp 3 Admin Dashboard Template">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Westilian">
     <title>有伴博物馆系统 - 四月兄弟 Aprbrother</title>
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" type="text/css">
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('css/matmix-iconfont.css')}}" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">
+    @yield("load")
     <style>
         .font{
                 font-family: Microsoft YaHei;
@@ -171,7 +173,7 @@
 <script src="{{asset('js/moment.js')}}"></script>
 <script src="{{asset('js/calendar/fullcalendar.js')}}"></script>
 <!--CHARTS-->
-<script src="{{asset('js/chart/sparkline/jquery.sparkline.js')}}"></script>
+<!-- <script src="{{asset('js/chart/sparkline/jquery.sparkline.js')}}"></script>
 <script src="{{asset('js/chart/easypie/jquery.easypiechart.min.js')}}"></script>
 <script src="{{asset('js/chart/flot/excanvas.min.js')}}"></script>
 <script src="{{asset('js/chart/flot/jquery.flot.min.js')}}"></script>
@@ -187,6 +189,6 @@
 <script src="{{asset('js/smart-resize.js')}}"></script>
 <script src="{{asset('js/layout.init.js')}}"></script>
 <script src="{{asset('js/matmix.init.js')}}"></script>
-<script src="{{asset('js/retina.min.js')}}"></script>
+<script src="{{asset('js/retina.min.js')}}"></script> -->
 </body>
 </html>

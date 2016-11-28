@@ -1,11 +1,16 @@
 @extends("layouts.admin")
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+@section("load")
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+@endsection
 @section("section")
 <style>
 #map{
     height: 500px;
     width: 100%;
+}
+table{
+    font-size: 14px;
 }
 </style>
 <div class="main-container" >
@@ -79,15 +84,23 @@
                                     </td>
                                     <td class="tc-center font">
                                         @if($item->poi)
-                                           {{$item->poi()->coordinate}}
+                                           {{$item->poi->coordinate}}
                                         @else
-                                            未添加
+                                            <span class="btn btn-info btn-xs">未添加</span>
                                         @endif 
                                     </td>
                                     <td class="tc-center font">
-                                         <button href="" class="btn btn-success btn-sm" title="">add</a>
-                                         <button href="" class="btn btn-info btn-sm" title="">edit</a>
-                                         <button href="" class="btn btn-danger btn-sm" title="">remove</a>
+                                        @if(!$item->poi)
+                                           <button  class="btn btn-success btn-sm add_poi_ajax" exhibit="{{$item->id}}" title="{{$item->title}}"  >添加点</a>
+                                        @endif 
+                                         <!-- <button  class="btn btn-info btn-sm"  title="{{$item->title}}">标记点</a> -->
+                                        @if($item->poi)
+                                            <form   style="display: inline-block;" action="{{route('admin.poi.destroy',$item->poi->id)}}" method="post" accept-charset="utf-8">
+                                                {{ method_field('DELETE') }}
+                                                {{csrf_field()}}
+                                                <button type="submit" class="btn btn-danger btn-sm">删除点</button>
+                                            </form>
+                                        @endif 
                                     </td>
                                 </tr>
                             @endforeach
@@ -144,6 +157,8 @@
                
             //设置地图中心点
                center:[0,0],
+                // 当你不想用户点击地图关闭消息弹出框时，请将其设置为false。
+               closePopupOnClick:false
             })
            // 获取图片的长宽
             var imageUrl = '{{asset('images/map.jpg')}}';
@@ -169,54 +184,128 @@
             //  L.marker([0, 0], {icon: myIcon}).addTo(map);
             
             // 添加标记点
-            var center  = L.marker([0, 0],{
-                title:"",
-                draggable:true
-            });
+            // var center  = L.marker([0, 0],{
+            //     title:"",
+            //     draggable:true
+            // });
             
-            // 标记添加到地图
-            center.addTo(map);
-            // 拖动标记事件开始
-            center.on("dragstart",function(){
-                console.log("鼠标拖动事件");
-                
-            })
+            // // 标记添加到地图
+            // center.addTo(map);
+            // // 拖动标记事件开始
+            // center.on("dragstart",function(){
+            //     console.log("鼠标拖动事件");
+            // })
+            // // 鼠标持续拖动事件
+            // center.on('drag',function(){
+            //     console.log("鼠标持续拖动事件");
+            // })
+            //  // 鼠标持续拖动事件结束
+            // center.on( 'dragend',function(){
+            //     console.log("鼠标持续拖动事件结束");
+            // })
+            // // 鼠标点击事 件开始
+            // center.on('click',function(){
+            //     console.log("鼠标点击事件");
+            // })
+
+
             // 批量添加标记点
-            var marker1 = L.marker([20,20]);
-            var marker2 = L.marker([5,30]);
-            var marker3 = L.marker([40,40]);
-            var marker4 = L.marker([11,87]);
-            var marker5 = L.marker([60,12]);
-            var marker6 = L.marker([39,23]);
-            var marker7 = L.marker([56,45]);
-            var marker8 = L.marker([90,90]);
-            var marker9 = L.marker([100,100]);
-            
-            var  marker = [];
-            L.layerGroup([marker1, marker2,marker3, marker4,marker5, marker6,marker7, marker8,marker9])
-               
+            // var marker1 = L.marker([20,20]);
+            // var marker2 = L.marker([5,30]);
+            // var marker3 = L.marker([40,40]);
+            // var marker4 = L.marker([11,87]);
+            // var marker5 = L.marker([60,12]);
+            // var marker6 = L.marker([39,23]);
+            // var marker7 = L.marker([56,45]);
+            // var marker8 = L.marker([90,90]);
+            // var marker9 = L.marker([100,100]);
+            var marker = [];
+            @foreach($poi as $item)
+                marker.push(
+                    L.marker([{{$item->coordinate}}],{
+                        title:"{{$item->id}}",
+                        draggable:false
+                    })
+               )
+            @endforeach
+            L.layerGroup(marker)
                 .addTo(map);
-            // 鼠标持续拖动事件
-            center.on('drag',function(){
-                console.log("鼠标持续拖动事件");
-            })
-             // 鼠标持续拖动事件结束
-            center.on('dragend',function(){
-                console.log("鼠标持续拖动事件结束");
-            })
-            // 鼠标点击事件开始
-            center.on('click',function(){
-                console.log("鼠标点击事件");
-            })
+            
             // 添加图片到地图
             L.imageOverlay(imageUrl,[[-456.5,-448],[456.5,443]]).addTo(map);
             // 地图显示此边界的值
             // map.fitBounds([[-456.5,-443],[456.5,443]])
             // 触发地图的点击事件
             map.on('click', function(e) {
-                 L.marker(e.latlng).addTo(map);
+                 // L.marker(e.latlng).addTo(map);
             });
-       
+
+            $(".add_poi_ajax").click(function(){
+                var exhibit = $(this).attr("exhibit");
+                var title = $(this).attr("title");
+
+
+                add_poi_ajax(exhibit,title)
+            })
+
+
+             // 异步添加点位
+            function update_poi_ajax(poi_id,coordinate){
+
+                $.ajax({
+                    headers:{
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:"{{url('admin/poi')}}"+"/"+poi_id,
+                    type:"put",
+                    data:{
+                        coordinate : coordinate,
+                    },
+                    success:function($data){
+                        alert($data)
+                    }
+                })
+            }
+
+
+
+
+            // 异步添加点位
+            function add_poi_ajax(exhibit_id,title){
+
+                $.ajax({
+                    headers:{
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:"{{route('admin.poi.store')}}",
+                    type:"post",
+                    data:{
+                        project_id : "{{$project_id}}",
+                        coordinate : "0,0",
+                        exhibit_id : exhibit_id,
+                    },
+                    success:function($data){
+                        var center = L.marker([0, 0],{
+                            title: $data.id,
+                            draggable:true
+                        });
+                        
+                        // 标记添加到地图
+                        center.addTo(map);
+                        center.bindPopup(title).openPopup();
+                        center.on("click",function(){
+                            this.openPopup()
+                        })
+                        // 拖动标记事件开始
+                     
+                        center.on("dragend",function(e){
+                            // this.openPopup()
+                            // update_poi_ajax(e.id,e.target._latlng);
+                        })
+                    }
+                })
+            }
+           
     })
 
     </script>

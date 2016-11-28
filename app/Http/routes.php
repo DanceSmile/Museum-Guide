@@ -80,8 +80,6 @@ Route::post("/loginHandle","Admin\LoginController@loginHandle");
 Route::get("/loginout","Admin\LoginController@loginout");
 
 
-Route::get('test', function () {
-    return DB::table("user")->get();
-});
+Route::get('test', "Admin\BaseController@resource_upload");
 
 

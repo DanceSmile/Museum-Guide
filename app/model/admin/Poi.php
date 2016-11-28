@@ -9,3 +9,4 @@ class Poi extends Model
     protected $table = "poi";
     protected $guarded = [];
 }
+	
