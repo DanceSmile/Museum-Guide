@@ -4,9 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8ee62cab67ea0a134838f4856815cca6",
-    "content-hash": "98330a2ac1dbcd19fa9a6cbce7d83946",
+    "hash": "62ed9719a8d94115b4e44f1311cfe6a6",
+    "content-hash": "15f1216a7366dfeb6c05c7213bc2917d",
     "packages": [
+        {
+            "name": "aliyuncs/oss-sdk-php",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+                "reference": "7678dad175fe0e8015c95bc81fd015c6280c20cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/aliyun/aliyun-oss-php-sdk/7678dad175fe0e8015c95bc81fd015c6280c20cd.zip",
+                "reference": "7678dad175fe0e8015c95bc81fd015c6280c20cd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSS\\": "src/OSS"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aliyuncs",
+                    "homepage": "http://www.aliyun.com"
+                }
+            ],
+            "description": "Aliyun OSS SDK for PHP",
+            "homepage": "http://www.aliyun.com/product/oss/",
+            "time": "2016-11-22 03:56:01"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -1352,6 +1393,57 @@
             "time": "2016-03-09 05:03:14"
         },
         {
+            "name": "qiniu/php-sdk",
+            "version": "v7.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qiniu/php-sdk.git",
+                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/qiniu/php-sdk/d1bca450b56d85beb7ba21f374a47bfeb59c288b.zip",
+                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Qiniu\\": "src/Qiniu"
+                },
+                "files": [
+                    "src/Qiniu/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Qiniu",
+                    "email": "sdk@qiniu.com",
+                    "homepage": "http://www.qiniu.com"
+                }
+            ],
+            "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
+            "homepage": "http://developer.qiniu.com/",
+            "keywords": [
+                "cloud",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2016-07-19 06:18:08"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.4",
             "source": {
@@ -2292,6 +2384,52 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "yangyifan/upload",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tyua07/laravel-upload.git",
+                "reference": "ee9e7145ad4cbb90c2a98186f1280b1ddb57f475"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/tyua07/laravel-upload/ee9e7145ad4cbb90c2a98186f1280b1ddb57f475.zip",
+                "reference": "ee9e7145ad4cbb90c2a98186f1280b1ddb57f475",
+                "shasum": ""
+            },
+            "require": {
+                "aliyuncs/oss-sdk-php": "*",
+                "qiniu/php-sdk": "v7.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yangyifan\\Upload\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yangyifan",
+                    "email": "yangyifanphp@gmail.com"
+                }
+            ],
+            "description": "上传 SDK for Laravel",
+            "keywords": [
+                "laravel",
+                "oss",
+                "qiniu",
+                "sdk",
+                "tyua07",
+                "upload",
+                "upyun"
+            ],
+            "time": "2016-09-20 03:15:43"
         }
     ],
     "packages-dev": [
@@ -3670,7 +3808,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "yangyifan/upload": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -12,8 +12,7 @@ class HomeController extends BaseController
     //用户首页
     public function  index (){
 
-
-        return view ("admin.index");
+        return view ("admin.home");
 
     }
 }

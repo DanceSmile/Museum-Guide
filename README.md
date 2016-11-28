@@ -1,8 +1,8 @@
 # Laravel PHP Framework
 
-laravel框架自己带的 php artisan serve  默认启动的 localhost:8000 的服务 在每次修该过的配置都需要`重新启动`才可以生效。
+- laravel框架自己带的 php artisan serve  默认启动的 localhost:8000 的服务 在每次修该过的配置都需要`重新启动`才可以生效。
 
-怎加一个高可用的打印函数
+- 怎加一个高可用的打印函数
 
 ```
 /**

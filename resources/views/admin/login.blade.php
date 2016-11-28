@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('layouts.login')
 
 @section('content')
 
@@ -6,8 +6,8 @@
     <form class="form-signin" action="{{url('loginHandle')}}" method="post"  >
 
         {{csrf_field()}}
-        <input type="text" id="inputEmail" class="form-control floatlabel " placeholder="用户名" required autofocus name="username">
-        <input type="password" id="inputPassword" class="form-control floatlabel " placeholder="密码" required name='password'>
+        <input type="text" id="inputEmail" class="form-control floatlabel " placeholder="用户名"  autofocus name="username" value="{{old('username')}}">
+        <input type="password" id="inputPassword" class="form-control floatlabel " placeholder="密码"  name='password' value="{{old('password')}}">
         <div id="remember" class="checkbox">
             <label>
                 <input type="checkbox" class="switch-mini" /> 记住我
