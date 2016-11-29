@@ -20,6 +20,7 @@ table{
                 <div class="col-md-7">
                     <div class="page-breadcrumb-wrap">
 
+
                         <div class="page-breadcrumb-info">
                             <h2 class="breadcrumb-titles">Dashboard <small>Web Application Backend</small></h2>
                             <ul class="list-page-breadcrumb">
@@ -51,7 +52,7 @@ table{
                 <thead>
                     <tr>
                         <th colspan="7">
-                            <div class="dt-col-header">All new registered users.</div>
+                            <div class="dt-col-header font">管理地图点位</div>
                             <p>
                                 This is a example of a complex header table you can use this syle in any kind of table.
                             </p>
@@ -60,7 +61,7 @@ table{
                 </thead>
             </table>
         </div>
-        <div class="row">
+        <div class="row" id="poi">
             <div class="col-md-6">
                 <table class="table table-striped table-hover table-bordered matmix-dt">
                      <thead>
@@ -72,7 +73,7 @@ table{
                                 坐标
                             </th>
                             <th class="tc-center font">
-                                操作
+                                操作 
                             </th>
                         </tr>
                      </thead>
@@ -82,25 +83,23 @@ table{
                                     <td class="tc-center font">
                                         {{$item->title}}
                                     </td>
-                                    <td class="tc-center font">
+                                    <td class="tc-center font is_add">
                                         @if($item->poi)
                                            {{$item->poi->coordinate}}
                                         @else
                                             <span class="btn btn-info btn-xs">未添加</span>
                                         @endif 
                                     </td>
-                                    <td class="tc-center font">
+                                    <td class="tc-center font action">
                                         @if(!$item->poi)
                                            <button  class="btn btn-success btn-sm add_poi_ajax" exhibit="{{$item->id}}" title="{{$item->title}}"  >添加点</a>
+                                           <button  class="btn btn-danger btn-sm remove_poi_ajax" poi_id = ""   style="display: none">删除点</button>
+                                        @else
+                                           <button  class="btn btn-success btn-sm add_poi_ajax" exhibit="{{$item->id}}" style="display: none;" title="{{$item->title}}"  >添加点</a>
+                                           <button  class="btn btn-danger btn-sm remove_poi_ajax" poi_id = "{{$item->poi->id}}"   >删除点</button>
                                         @endif 
                                          <!-- <button  class="btn btn-info btn-sm"  title="{{$item->title}}">标记点</a> -->
-                                        @if($item->poi)
-                                            <form   style="display: inline-block;" action="{{route('admin.poi.destroy',$item->poi->id)}}" method="post" accept-charset="utf-8">
-                                                {{ method_field('DELETE') }}
-                                                {{csrf_field()}}
-                                                <button type="submit" class="btn btn-danger btn-sm">删除点</button>
-                                            </form>
-                                        @endif 
+                                        
                                     </td>
                                 </tr>
                             @endforeach
@@ -161,7 +160,7 @@ table{
                closePopupOnClick:false
             })
            // 获取图片的长宽
-            var imageUrl = '{{asset('images/map.jpg')}}';
+            var imageUrl = "{{asset('upload/'.$project->map)}}";
             var img = new Image();
             img.src = imageUrl;
             var imgWidth = img.width;
@@ -224,7 +223,7 @@ table{
                 marker.push(
                     L.marker([{{$item->coordinate}}],{
                         title:"{{$item->id}}",
-                        draggable:false
+                        draggable:true
                     })
                )
             @endforeach
@@ -241,12 +240,23 @@ table{
             });
 
             $(".add_poi_ajax").click(function(){
+
                 var exhibit = $(this).attr("exhibit");
                 var title = $(this).attr("title");
 
 
-                add_poi_ajax(exhibit,title)
+                add_poi_ajax(exhibit,title,$(this))
             })
+
+
+            $(document).on("click",".remove_poi_ajax",function(){
+
+                var poi_id  = $(this).attr("poi_id")
+                remove_poi_ajax(poi_id,$(this))
+
+            })
+
+         
 
 
              // 异步添加点位
@@ -267,11 +277,32 @@ table{
                 })
             }
 
+            // 异步删除点位
+            function remove_poi_ajax(poi_id,obj){
+                $.ajax({
+                    headers:{
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:'{{url('admin/poi')}}'+'/'+ poi_id ,
+                    type:"delete",
+                    data:{
+                    },
+                    success:function($data){
+                        obj.parent().find(".add_poi_ajax").show();
+                        obj.parents("tr").find(".is_add").html("<span class=\'btn btn-info btn-xs\'>未添加</span>")
+                        obj.hide();
+
+                        $(".leaflet-marker-pane").find("img[title='"+$data.id+"']").remove();
+                    }
+                })
+            }
+
+
 
 
 
             // 异步添加点位
-            function add_poi_ajax(exhibit_id,title){
+            function add_poi_ajax(exhibit_id,title,obj){
 
                 $.ajax({
                     headers:{
@@ -285,10 +316,20 @@ table{
                         exhibit_id : exhibit_id,
                     },
                     success:function($data){
+
+
+
+                        obj.parent().find(".remove_poi_ajax").show();
+                        obj.parent().find(".remove_poi_ajax").attr("poi_id",$data.id)
+                        obj.parents("tr").find(".is_add").html("0,0")
+                        obj.hide();
+
                         var center = L.marker([0, 0],{
                             title: $data.id,
                             draggable:true
                         });
+
+                        console.log(center)
                         
                         // 标记添加到地图
                         center.addTo(map);
@@ -299,12 +340,14 @@ table{
                         // 拖动标记事件开始
                      
                         center.on("dragend",function(e){
-                            // this.openPopup()
+                            
+                            console.log(this)
                             // update_poi_ajax(e.id,e.target._latlng);
                         })
                     }
                 })
             }
+
            
     })
 

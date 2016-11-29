@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\project as ProjectAuth;
 
 use App\model\admin\Project;
 use App\model\admin\Exhibit;
+use App\model\admin\Poi;
 
 class ProjectController extends Controller
 {
@@ -42,7 +44,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectAuth $request)
     {
 
          $data = Project::create([
@@ -109,6 +111,10 @@ class ProjectController extends Controller
         
         Project::destroy([$id]);
 
+        $pois = Poi::where("project_id",$id)->delete();
+
+        $exhibits = Exhibit::where("project_id",$id)->update(['project_id'=>0]);
+        
         return redirect("admin/exhibit");
     }
 

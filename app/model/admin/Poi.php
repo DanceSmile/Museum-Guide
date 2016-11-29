@@ -8,5 +8,13 @@ class Poi extends Model
 {
     protected $table = "poi";
     protected $guarded = [];
+
+
+
+    // 一对多关联 项目表   反向代理
+    public function project(){
+        return  $this->belongsTo("App\model\admin\Poi","project_id","id");
+    }
+
 }
 	

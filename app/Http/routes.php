@@ -70,6 +70,14 @@ Route::group(["prefix"=>"admin","namespace"=>"Admin","middleware"=>"loginAuth"],
 
 
 
+    // 用户上传文件
+    Route::any("uploader","BaseController@fileUploader");
+
+    //云数据存储
+    Route::get('cloud', "BaseController@resource_upload");
+
+
+
 });
 
 //载入登陆模板

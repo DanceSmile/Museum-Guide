@@ -25,15 +25,14 @@ class addExhibit extends Request
     {
         return [
             "title" => "required" ,
-            //  "music" => "required" ,
-            //  "pic" => "required" ,
+             "music" => "required" ,
+             "pic" => "required" ,
         ];
     }
 
     public  function message(){
         return [
             "title.required" => "产品的名称不能为空",
-            //  "music.required" =>""
 
         ];
     }

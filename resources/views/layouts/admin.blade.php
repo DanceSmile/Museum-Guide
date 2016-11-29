@@ -152,43 +152,16 @@
 </footer>
 </div>
 </div>
-<script src="http://cdn.bootcss.com/jquery/1.12.0/jquery.js" type="text/javascript" ></script>
-@yield("js")
-<script src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
-<script src="{{asset('js/jRespond.min.js')}}"></script>
+
+
+
+
+
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/layer.js')}}"></script>
+<!-- <script src="{{asset('js/vue.js')}}"></script> -->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/nav-accordion.js')}}"></script>
-<script src="{{asset('js/hoverintent.js')}}"></script>
-<script src="{{asset('js/waves.js')}}"></script>
-<script src="{{asset('js/switchery.js')}}"></script>
-<script src="{{asset('js/jquery.loadmask.js')}}"></script>
-<script src="{{asset('js/icheck.js')}}"></script>
-<script src="{{asset('js/select2.js')}}"></script>
-<script src="{{asset('js/bootstrap-filestyle.js')}}"></script>
-<script src="{{asset('js/bootbox.js')}}"></script>
-<script src="{{asset('js/animation.js')}}"></script>
-<script src="{{asset('js/colorpicker.js')}}"></script>
-<script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
-<script src="{{asset('js/sweetalert.js')}}"></script>
-<script src="{{asset('js/moment.js')}}"></script>
-<script src="{{asset('js/calendar/fullcalendar.js')}}"></script>
-<!--CHARTS-->
-<!-- <script src="{{asset('js/chart/sparkline/jquery.sparkline.js')}}"></script>
-<script src="{{asset('js/chart/easypie/jquery.easypiechart.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/excanvas.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/curvedLines.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.time.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.stack.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.axislabels.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.resize.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.tooltip.min.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.spline.js')}}"></script>
-<script src="{{asset('js/chart/flot/jquery.flot.pie.min.js')}}"></script>
-<script src="{{asset('js/chart.init.js')}}"></script>
-<script src="{{asset('js/smart-resize.js')}}"></script>
-<script src="{{asset('js/layout.init.js')}}"></script>
-<script src="{{asset('js/matmix.init.js')}}"></script>
-<script src="{{asset('js/retina.min.js')}}"></script> -->
+@yield("js")
+
 </body>
 </html>

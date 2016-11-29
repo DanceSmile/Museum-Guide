@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\admin\Exhibit;
 use App\model\admin\Poi;
+use App\model\admin\Project;
 use App\Http\Requests\poi as Poirequest;
 
 
@@ -71,9 +72,13 @@ class PoiController extends Controller
         $poi = Poi::all();
         $project_id = $id;
 
+        $project = Project::find($id);
 
 
-        return view("admin.poi.show",compact("data","project_id","poi"));
+
+
+
+        return view("admin.poi.show",compact("data","project_id","poi",'project'));
 
     }
 
@@ -114,6 +119,6 @@ class PoiController extends Controller
     {
          Poi::destroy($id);
 
-         return back(); 
+         return Response()->json(["id"=>$id]); 
     }
 }

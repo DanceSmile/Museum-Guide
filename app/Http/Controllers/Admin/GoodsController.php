@@ -105,7 +105,7 @@ class GoodsController extends Controller
                                 "minor"   =>   $request->minor,
                             "distance"  =>   $request->distance,
                         ]);
-          return  redirect("admin/updateGood/$id");
+          return  redirect()->route('goods');
     }
 
 

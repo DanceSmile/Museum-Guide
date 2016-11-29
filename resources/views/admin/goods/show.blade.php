@@ -127,29 +127,25 @@ a:hover {
             <div class="row">
                 <div class="col-md-7">
                     <div class="page-breadcrumb-wrap">
-
                         <div class="page-breadcrumb-info">
-                            <h2 class="breadcrumb-titles">Dashboard <small>Web Application Backend</small></h2>
-                            <ul class="list-page-breadcrumb">
-                                <li><a href="#">Home</a>
+                            <h2 class="breadcrumb-titles font">展品管理 <small class="font">面板</small></h2>
+                            <ul class="list-page-breadcrumb" style="margin-top: 10px;">
+                                <li><a href="#" class="font" >后台首页</a>
                                 </li>
-                                <li class="active-page"> Dashboard</li>
+                                <li class="active-page font">展品管理</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="btn-group pull-right " style="margin-top:30px;">
-                        <a  href='{{url('admin/addGoods')}}' type="button" class="btn btn-default"><i class="ico-plus"></i> Add New Goods</a>
+                        <a  href='{{url('admin/addGoods')}}' type="button" class="btn btn-default font"><i class="ico-plus"></i> 添加新的展品</a>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
       <div class="row">
-
 							<div class="widget-container">
 								<div class="widget-block">
 									<div class="table-responsive">
@@ -157,9 +153,9 @@ a:hover {
 										<thead>
 										<tr>
 											<th colspan="7">
-												<div class="dt-col-header">All new registered users.</div>
-												<p>
-													This is a example of a complex header table you can use this syle in any kind of table.
+												<div class="dt-col-header font">展品列表</div>
+												<p class="font">
+													这里将显示你所有添加过的展品
 												</p>
 											</th>
 											
@@ -200,7 +196,7 @@ a:hover {
                                                 </td>
                                                 <td class="tc-center font">
                                                     @if($pic = $value->resource()->where("type",1)->first())
-                                                        {{$pic->resource_name}}
+                                                        <img src="/upload/{{$pic->resource_name}}" style="max-width: 50px;">
                                                     @else
                                                         没有图片
                                                     @endif
