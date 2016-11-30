@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
 //添加后台群组路由
 Route::group(["prefix"=>"admin","namespace"=>"Admin","middleware"=>"loginAuth"],function(){
 
@@ -37,7 +31,6 @@ Route::group(["prefix"=>"admin","namespace"=>"Admin","middleware"=>"loginAuth"],
      //删除展品
     Route::get("delGood/{id}","GoodsController@delGood")
     ->where(['id' => '[0-9]+']);
-
 
 
     // -----------------------------------------------------------
@@ -68,15 +61,20 @@ Route::group(["prefix"=>"admin","namespace"=>"Admin","middleware"=>"loginAuth"],
     // 用户统计资源路由
     Route::resource("statistics","StatisticsController");
 
-
-
     // 用户上传文件
     Route::any("uploader","BaseController@fileUploader");
 
     //云数据存储
     Route::get('cloud', "BaseController@resource_upload");
 
+   
+});
 
+
+//添加前台群组路由
+Route::group(["prefix"=>"index","namespace"=>"Index"],function(){
+
+    Route::get("/","IndexController@index");
 
 });
 
@@ -88,6 +86,13 @@ Route::post("/loginHandle","Admin\LoginController@loginHandle");
 Route::get("/loginout","Admin\LoginController@loginout");
 
 
-Route::get('test', "Admin\BaseController@resource_upload");
+
+
+// 默认首页
+Route::get("/","index\IndexController@index");
+
+
+
+
 
 

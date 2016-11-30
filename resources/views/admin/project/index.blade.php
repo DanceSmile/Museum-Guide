@@ -9,31 +9,24 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="page-breadcrumb-wrap">
-
                         <div class="page-breadcrumb-info">
-                            <h2 class="breadcrumb-titles">Dashboard <small>Web Application Backend</small></h2>
+                            <h2 class="breadcrumb-titles  font">展览管理 <small>面板</small></h2>
                             <ul class="list-page-breadcrumb">
                                 <li><a href="#">Home</a>
                                 </li>
-                                <li class="active-page"> Dashboard</li>
+                                <li class="active-page">展览列表</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="btn-group pull-right " style="margin-top:30px;">
-                        <a  href='{{url('admin/exhibit/create')}}' type="button" class="btn btn-default"><i class="ico-plus"></i> Add New Goods</a>
+                        <a  href='{{url('admin/exhibit/create')}}' type="button" class="btn btn-default font"><i class="ico-plus"></i> 创建新的展览 </a>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
       <div class="row">
-
-
-
 <div class="widget-container">
     <div class="widget-block">
         <div class="table-responsive">
@@ -41,9 +34,9 @@
                 <thead>
                     <tr>
                         <th colspan="7">
-                            <div class="dt-col-header">All new registered users.</div>
-                            <p>
-                                This is a example of a complex header table you can use this syle in any kind of table.
+                            <div class="dt-col-header font">展览列表</div>
+                            <p class="font">
+                                在这里你将看到所有创建过的展览 .
                             </p>
                         </th>
                         

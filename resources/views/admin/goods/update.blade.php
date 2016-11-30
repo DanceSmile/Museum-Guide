@@ -52,11 +52,13 @@
 						<div class="col-md-7">
 							<div class="page-breadcrumb-wrap">
 								<div class="page-breadcrumb-info">
-									<h2 class="breadcrumb-titles">Add New Good <small>Add New Good Form</small></h2>
+									<h2 class="breadcrumb-titles"> 编辑展品 <small> 面板 </small></h2>
 									<ul class="list-page-breadcrumb">
 										<li><a href="#">Home</a>
 										</li>
-										<li class="active-page"> Sign Up</li>
+										<li><a href="#"> 展品列表 </a>
+										</li>
+										<li class="active-page"> 编辑展品 </li>
 									</ul>
 								</div>
 							</div>
@@ -75,8 +77,8 @@
 								<div class=" widget-block">
 									<div class="page-header">
 										<h2 class="font">编辑当前展品的信息	</h2>
-										<p>
-											Please provide your name, email address (won't be published) and a comment
+										<p class="font">
+											在这里可以修改展品的相关信息。 
 										</p>
 									</div>
 							<form id="SignUpForm"  class="form-horizontal" action="{{url('admin/editGood').'/'.$data->id}}" method="post" >
@@ -87,11 +89,6 @@
 												<input type="text" class="form-control" name="title" placeholder="展品名称" value="{{$data->title}}"/>
 											</div>
 										</div>
-
-
-										
-
-
 										<div class="form-group"  id="mp">
 											<label class="col-lg-3 control-label font">展品图片</label>
 											<div class="col-lg-4">	
@@ -108,10 +105,6 @@
 												<input type="hidden" class="form-control inputMap"   name="pic" placeholder="展品图片" value="{{$pic->resource_name}}"/>
 											</div>
 										</div>
-
-
-
-
 										<div class="form-group" id="mu" >
 											<label class="col-lg-3 control-label font">展品音频</label>
 											<div class="col-lg-4">	
@@ -128,15 +121,6 @@
 												<input type="hidden" class="form-control music"   name="music" placeholder="展品音频" value="{{$music->resource_name}}"/>
 											</div>
 										</div>
-
-
-
-
-
-
-
-                                        
-
                                         <div class="form-group">
 											<label class="col-lg-3 control-label  font">展品介绍</label>
 											<div class="col-lg-4">

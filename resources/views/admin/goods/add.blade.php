@@ -40,11 +40,7 @@
 	opacity: 0.6;
 	pointer-events:none;
 }
-
-
 </style>
-
-
 <div class="main-container">
 			<div class="container-fluid">
 				<div class="page-breadcrumb">
@@ -52,11 +48,13 @@
 						<div class="col-md-7">
 							<div class="page-breadcrumb-wrap">
 								<div class="page-breadcrumb-info">
-									<h2 class="breadcrumb-titles">Add New Good <small>Add New Good Form</small></h2>
+									<h2 class="breadcrumb-titles" ><small> 创建展品 </small>  面板 </h2>
 									<ul class="list-page-breadcrumb">
 										<li><a href="#">Home</a>
 										</li>
-										<li class="active-page"> Sign Up</li>
+										<li><a href="#"> 展品列表 </a>
+										</li>
+										<li class="active-page"> 创建展品</li>
 									</ul>
 								</div>
 							</div>
@@ -74,9 +72,9 @@
 							<div class="widget-container">
 								<div class=" widget-block">
 									<div class="page-header">
-										<h2>Form Heading</h2>
-										<p>
-											Please provide your name, email address (won't be published) and a comment
+										<h2 class="font"> 创建展品 </h2>
+										<p class="font">
+											在这里你可以创建新的展品。
 										</p>
 									</div>
 									<form id="SignUpForm"  class="form-horizontal" action="{{url('admin/store')}}" method="post" >
@@ -87,9 +85,6 @@
 												<input type="text" class="form-control" name="title" placeholder="展品名称"/>
 											</div>
 										</div>
-
-
-
 										<div class="form-group"  id="mp">
 											<label class="col-lg-3 control-label font">展品图片</label>
 											<div class="col-lg-4">	
@@ -144,11 +139,14 @@
 
                                         <div class="page-header">
                                            
-                                            <p>
-                                                Please provide your name, email address (won't be published) and a comment
+                                            <p class="font">
+                                             
                                             </p>
                                         </div>
-<!-------------------------------------------------------------------------------------------------------------------->
+                                        <div class="form-group">
+											<label class="col-lg-9  col-lg-offset-3  font">以下是微信摇一摇申请到的设备信息</label>
+										</div>
+
                                        
                                         <div class="form-group">
 											<label class="col-lg-3 control-label  font">设备UUID</label>

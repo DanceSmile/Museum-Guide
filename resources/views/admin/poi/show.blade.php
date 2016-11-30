@@ -1,7 +1,7 @@
 @extends("layouts.admin")
 @section("load")
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
- <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="{{asset('leaflet.css')}}" />
+    <script src="{{asset('leaflet.js')}}"></script>
 @endsection
 @section("section")
 <style>
@@ -11,6 +11,9 @@
 }
 table{
     font-size: 14px;
+}
+.leaflet-shadow-pane{
+    display: none;
 }
 </style>
 <div class="main-container" >
@@ -22,24 +25,24 @@ table{
 
 
                         <div class="page-breadcrumb-info">
-                            <h2 class="breadcrumb-titles">Dashboard <small>Web Application Backend</small></h2>
+                            <h2 class="breadcrumb-titles"> 管理点位 <small>面板</small></h2>
                             <ul class="list-page-breadcrumb">
                                 <li><a href="#">Home</a>
                                 </li>
-                                <li class="active-page"> Dashboard</li>
+                                <li><a href="#">展览列表</a>
+                                </li>
+                                <li class="active-page"> 管理点位 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="btn-group pull-right " style="margin-top:30px;">
-                        <a  href='{{url('admin/exhibit/create')}}' type="button" class="btn btn-default"><i class="ico-plus"></i> Add New Goods</a>
+                        <a  href='{{url('admin/exhibit/create')}}' type="button" class="btn btn-default font"><i class="ico-plus"></i> 添加新的展览 </a>
                     </div>
                 </div>
             </div>
         </div>
-
-
 
       <div class="row">
 
@@ -53,8 +56,8 @@ table{
                     <tr>
                         <th colspan="7">
                             <div class="dt-col-header font">管理地图点位</div>
-                            <p>
-                                This is a example of a complex header table you can use this syle in any kind of table.
+                            <p class="font">
+                                在这里可以修改和删除当前已经添加的展品点位
                             </p>
                         </th>
                     </tr>
@@ -139,113 +142,88 @@ table{
     <script>
         
     $(function(){
+         localStorage.clear();
 
-         // Leaflet on Mobile
-           //    实例地图类
-           var map = L.map('map',{
+        var imageUrl = "{{asset('upload/'.$project->map)}}";
+        var img = new Image();
+        img.src = imageUrl;
+        img.onload =function(){
+            imgWidth = img.width;
+            imgHeight = img.height;
+            // Leaflet on Mobile
+            //    实例地图类
+            var map = L.map('map',{
             //    修改坐标系
                crs : L.CRS.Simple,
             //    设置最大拖动边界
-               maxBounds : [[-456.5,-443],[456.5,443]],
+               maxBounds : [[-(imgHeight/2),-(imgWidth/2)],[imgHeight/2,imgWidth/2]],
             //    设置缩放的最小值
                minZoom : -2,
             //    设置地图放大的最大值W
                maxZoom : 2,
             //    设置初始化的缩放值
-               zoom:0.2,
+               zoom:-1,
                
             //设置地图中心点
                center:[0,0],
                 // 当你不想用户点击地图关闭消息弹出框时，请将其设置为false。
-               closePopupOnClick:false
             })
-           // 获取图片的长宽
-            var imageUrl = "{{asset('upload/'.$project->map)}}";
-            var img = new Image();
-            img.src = imageUrl;
-            var imgWidth = img.width;
-            var imgHeight = img.height;
-            // 1.使用图片自定义icon标记图标
-            // var myIcon = L.icon({
-            //     iconUrl: 'my-icon.png',
-            //     iconRetinaUrl: 'my-icon@2x.pngW',
-            //     iconSize: [38, 95],W
-            //     iconAnchor: [22, 94],
-            //     popupAnchor: [-3, -76],
-            //     shadowUrl: 'my-icon-shadow.png',
-            //     shadowRetinaUrl: 'my-icon-shadow@2x.png',
-            //     shadowSize: [68, 95],
-            //     shadowAnchor: [22, 94]
-            // });
-            // 2.使用div自定义标记点
-            var myIcon = L.divIcon({className: 'my-div-icon'});
-             // you can set .my-div-icon styles in CSS
-            //  L.marker([0, 0], {icon: myIcon}).addTo(map);
-            
-            // 添加标记点
-            // var center  = L.marker([0, 0],{
-            //     title:"",
-            //     draggable:true
-            // });
-            
-            // // 标记添加到地图
-            // center.addTo(map);
-            // // 拖动标记事件开始
-            // center.on("dragstart",function(){
-            //     console.log("鼠标拖动事件");
-            // })
-            // // 鼠标持续拖动事件
-            // center.on('drag',function(){
-            //     console.log("鼠标持续拖动事件");
-            // })
-            //  // 鼠标持续拖动事件结束
-            // center.on( 'dragend',function(){
-            //     console.log("鼠标持续拖动事件结束");
-            // })
-            // // 鼠标点击事 件开始
-            // center.on('click',function(){
-            //     console.log("鼠标点击事件");
-            // })
-
-
-            // 批量添加标记点
-            // var marker1 = L.marker([20,20]);
-            // var marker2 = L.marker([5,30]);
-            // var marker3 = L.marker([40,40]);
-            // var marker4 = L.marker([11,87]);
-            // var marker5 = L.marker([60,12]);
-            // var marker6 = L.marker([39,23]);
-            // var marker7 = L.marker([56,45]);
-            // var marker8 = L.marker([90,90]);
-            // var marker9 = L.marker([100,100]);
+          
+        
             var marker = [];
             @foreach($poi as $item)
                 marker.push(
                     L.marker([{{$item->coordinate}}],{
                         title:"{{$item->id}}",
-                        draggable:true
-                    })
+                        draggable:false
+                    }).bindPopup('{{$item->exhibit->title}}')
                )
             @endforeach
             L.layerGroup(marker)
                 .addTo(map);
             
             // 添加图片到地图
-            L.imageOverlay(imageUrl,[[-456.5,-448],[456.5,443]]).addTo(map);
+            L.imageOverlay(imageUrl,[[-(imgHeight/2),-(imgWidth/2)],[imgHeight/2,imgWidth/2]]).addTo(map);
             // 地图显示此边界的值
             // map.fitBounds([[-456.5,-443],[456.5,443]])
             // 触发地图的点击事件
             map.on('click', function(e) {
-                 // L.marker(e.latlng).addTo(map);
+                 if(localStorage.getItem("json")){
+
+
+                     var data = JSON.parse(localStorage.getItem("json"));
+
+
+                     add_poi_ajax(data.exhibit,data.title,currentObj,e.latlng.lat+","+e.latlng.lng)
+                     localStorage.clear();
+
+
+
+
+
+                 }
+
             });
 
             $(".add_poi_ajax").click(function(){
 
+
+
                 var exhibit = $(this).attr("exhibit");
                 var title = $(this).attr("title");
+                var json = {
+                    "exhibit" :exhibit,
+                    "title" : title,
+                };
 
 
-                add_poi_ajax(exhibit,title,$(this))
+                currentObj = $(this);
+
+                 localStorage.setItem("json",JSON.stringify(json));
+
+
+
+                // add_poi_ajax(exhibit,title,$(this))
             })
 
 
@@ -291,7 +269,7 @@ table{
                         obj.parent().find(".add_poi_ajax").show();
                         obj.parents("tr").find(".is_add").html("<span class=\'btn btn-info btn-xs\'>未添加</span>")
                         obj.hide();
-
+                        // $("#map").closePopup();
                         $(".leaflet-marker-pane").find("img[title='"+$data.id+"']").remove();
                     }
                 })
@@ -302,7 +280,7 @@ table{
 
 
             // 异步添加点位
-            function add_poi_ajax(exhibit_id,title,obj){
+            function add_poi_ajax(exhibit_id,title,obj,coordinate){
 
                 $.ajax({
                     headers:{
@@ -312,7 +290,7 @@ table{
                     type:"post",
                     data:{
                         project_id : "{{$project_id}}",
-                        coordinate : "0,0",
+                        coordinate : coordinate,
                         exhibit_id : exhibit_id,
                     },
                     success:function($data){
@@ -321,22 +299,19 @@ table{
 
                         obj.parent().find(".remove_poi_ajax").show();
                         obj.parent().find(".remove_poi_ajax").attr("poi_id",$data.id)
-                        obj.parents("tr").find(".is_add").html("0,0")
+                        obj.parents("tr").find(".is_add").html(coordinate)
                         obj.hide();
 
-                        var center = L.marker([0, 0],{
+                        var center = L.marker(coordinate.split(","),{
                             title: $data.id,
-                            draggable:true
+                            draggable:false
                         });
 
-                        console.log(center)
                         
                         // 标记添加到地图
                         center.addTo(map);
                         center.bindPopup(title).openPopup();
-                        center.on("click",function(){
-                            this.openPopup()
-                        })
+                       
                         // 拖动标记事件开始
                      
                         center.on("dragend",function(e){
@@ -347,9 +322,10 @@ table{
                     }
                 })
             }
-
-           
+        }      
     })
+
+
 
     </script>
     

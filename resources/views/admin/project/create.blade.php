@@ -1,7 +1,5 @@
 @extends("layouts.admin")
 
-
-
 @section("section")
 <style type="text/css">	
 	#imgPicker{
@@ -34,16 +32,11 @@
 .webuploader-pick-hover {
 	background: #00a2d4;
 }
-
 .webuploader-pick-disable {
 	opacity: 0.6;
 	pointer-events:none;
 }
-
-
 </style>
-
-
 <div class="main-container">
 			<div class="container-fluid">
 				<div class="page-breadcrumb">
@@ -51,18 +44,18 @@
 						<div class="col-md-7">
 							<div class="page-breadcrumb-wrap">
 								<div class="page-breadcrumb-info">
-									<h2 class="breadcrumb-titles">Add New Good <small>Add New Good Form</small></h2>
+									<h2 class="breadcrumb-titles font"> 创建展览 <small> 面板 </small></h2>
 									<ul class="list-page-breadcrumb">
 										<li><a href="#">Home</a>
 										</li>
-										<li class="active-page"> Sign Up</li>
+										<li class="active-page"> 创建展览 </li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-5">
                            <div class="btn-group pull-right " style="margin-top:30px;">
-                                <a  href='{{url('admin/exhibit/store')}}' type="button" class="btn btn-default"><i class="ico-plus"></i> Add New Goods</a>
+                                <a  href='{{url('admin/exhibit/store')}}' type="button" class="btn btn-default font"><i class="ico-plus"></i> 创建新的展览</a>
                             </div>
 						</div>
 					</div>
@@ -73,9 +66,9 @@
 							<div class="widget-container">
 								<div class=" widget-block">
 									<div class="page-header">
-										<h2>Form Heading</h2>
-										<p>
-											Please provide your name, email address (won't be published) and a comment
+										<h2 class="font">创建一个新的展览</h2>
+										<p class="font">
+											你可以通过下面的表单创建一个新的展览 。
 										</p>
 									</div>
 									<form id="SignUpForm"  class="form-horizontal" action="{{url('admin/exhibit')}}" method="post" >
@@ -86,15 +79,12 @@
 												<input type="text" class="form-control" name="pname" placeholder="展览主题"  required />
 											</div>
 										</div>
-
 											<div class="form-group" id="map">
 											<label class="col-lg-3 control-label font">展览地图</label>
 											<div class="col-lg-4">	
 												<div class="imgShow">
-													
 												</div>
 												<div id="imgPicker" class="wu-example" >
-													    
 												</div>
 												<div class="progress" style="display: none;">
 												  <div class="progress-bar progress-bar-striped active" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width: 70%">
@@ -103,11 +93,6 @@
 												<input type="hidden" class="form-control inputMap"   name="map" placeholder="展览地图" value=""/>
 											</div>
 										</div>
-
-
-
-                                       
-
                                         <div class="form-group">
 											<label class="col-lg-3 control-label  font">展览简介</label>
 											<div class="col-lg-4">
@@ -128,8 +113,6 @@
 				</div>
 			</div>
 		</div>
-
-
 @endsection
 
 @section("js")
@@ -144,8 +127,6 @@
 		@endforeach
 
 	@endif
-
-
 	function init(){
 			// 初始化Web Uploader
         var imgUpaloader = WebUploader.create({
@@ -159,8 +140,6 @@
 
             // 文件接收服务端。
             server: "{{url('admin/uploader')}}",
-
-
             // 选择文件的按钮。可选。
             // 内部根据当前运行是创建，可能是input元素，也可能是flash.
             pick: {
@@ -181,33 +160,11 @@
             }
         });
 
+        // 当有文件添加进来的时候
         imgUpaloader.on( 'fileQueued', function( file ) {
             	
-             // 当有文件添加进来的时候
                // console.log("添加进来了")
         });
-        // 文件上传过程中创建进度条实时显示。
-		// imgUpaloader.on( 'uploadProgress', function( file, percentage ) {
-		// 	console.log(file.id)
-		//     var $li = $( '#'+file.id ),
-		//         $percent = $li.find('.progress .progress-bar');
-
-		//     // 避免重复创建
-		//     if ( !$percent.length ) {
-		//         $percent = $('<div class="progress progress-striped active">' +
-		//           '<div class="progress-bar" role="progressbar" style="width: 0%">' +
-		//           '</div>' +
-		//         '</div>').appendTo( $li ).find('.progress-bar');
-		//     }
-
-		//     $li.find('p.state').text('上传中');
-
-		//     $percent.css( 'width', percentage * 100 + '%' );
-		// });
-
-
-
-
         // 文件上传过程中创建进度条实时显示。
         imgUpaloader.on( 'uploadProgress', function( file, percentage ) {
         	 $("#imgPicker").css({"display":"none"});
@@ -224,8 +181,7 @@
         imgUpaloader.on( 'uploadSuccess', function( file ) {
 
         });
-
-
+        // 服务器成功返回响应
         imgUpaloader.on( 'uploadAccept', function( object ,ret) {
        	    $(".inputMap").val(ret.filename)
         	var img = new Image();
@@ -233,8 +189,6 @@
         	img.setAttribute("class","thumbnail")
         	$(".imgShow").html(img)
         });
-
-        
 
         // 文件上传失败，显示上传出错。
         imgUpaloader.on( 'uploadError', function( file ) {
@@ -247,59 +201,9 @@
         	$(".progress").css({"display":"none"});
         });
 
-
-// -------------------------------------------------------------
-        // var musicUploader = WebUploader.create({
-
-        //     auto: true,
-
-
-        //     // swf文件路径
-        //     swf: "../../dist/Uploader.swf",
-
-        //     // 文件接收服务端。
-        //     server: '../../server/fileupload.php',
-
-        //     // 选择文件的按钮。可选。
-        //     // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-        //     pick: '#picker',
-
-        //     // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
-        //     resize: false
-        // });
-
-        // // 当有文件被添加进队列的时候
-        // musicUploader.on( 'fileQueued', function( file ) {
-        //     console.log('music 被添加进来')
-        // });
-        // // 文件上传过程中创建进度条实时显示。
-        // musicUploader.on( 'uploadProgress', function( file, percentage ) {
-        //     console.log("mucic上传过程中"+percentage * 100 + '%' )
-        // });
-
-        // musicUploader.on( 'uploadSuccess', function( file ) {
-        //     console.log("music上传成功" )
-        // });
-
-        // musicUploader.on( 'uploadError', function( file ) {
-        //     console.log("music上传失败" )
-
-        // });
-
-        // musicUploader.on( 'uploadComplete', function( file ) {
-        //     console.log("music上传结束" )
-
-        // });
-
-
-        // musicUploader.on("uploadAccept",function(file){
-
-        //     console.log(file)
-
-        // })
-
 	}
 
+	//删除文件提示操作
 	$(document).on("click",'.thumbnail',function(){
 		layer.confirm('你确认删除图片么？', {
 		  btn: ['确认','取消'] //按钮

@@ -137,18 +137,20 @@ a:hover {
                     <div class="page-breadcrumb-wrap">
 
                         <div class="page-breadcrumb-info">
-                            <h2 class="breadcrumb-titles">Dashboard <small>Web Application Backend</small></h2>
+                            <h2 class="breadcrumb-titles font"> 管理已绑定的展品 <small>面板</small></h2>
                             <ul class="list-page-breadcrumb">
                                 <li><a href="#">Home</a>
                                 </li>
-                                <li class="active-page"> Dashboard</li>
+                                <li><a href="#">展览管理</a>
+                                </li>
+                                <li class="active-page">展品管理</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="btn-group pull-right " style="margin-top:30px;">
-                        <a  href='{{url('admin/exhibit/create')}}' type="button" class="btn btn-default"><i class="ico-plus"></i> Add New Goods</a>
+                        <a  href='{{url('admin/exhibit/create')}}' type="button" class="btn btn-default font"><i class="ico-plus"></i>添加新的展览</a>
                     </div>
                 </div>
             </div>

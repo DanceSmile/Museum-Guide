@@ -1,8 +1,6 @@
 @extends("layouts.admin")
 
 @section("section")
-
-
 <style type="text/css">	
 	#imgPicker{
 		border:none;
@@ -49,18 +47,20 @@
 						<div class="col-md-7">
 							<div class="page-breadcrumb-wrap">
 								<div class="page-breadcrumb-info">
-									<h2 class="breadcrumb-titles">Add New Good <small>Add New Good Form</small></h2>
+									<h2 class="breadcrumb-titles font"> 编辑展览 <small class="font">面板</small></h2>
 									<ul class="list-page-breadcrumb">
 										<li><a href="#">Home</a>
 										</li>
-										<li class="active-page"> Sign Up</li>
+										<li class=""><a href="">展览管理</a></li>
+										<li class="active-page">编辑展览</li>
+
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-5">
                            <div class="btn-group pull-right " style="margin-top:30px;">
-                                <a  href='{{url('admin/addGoods')}}' type="button" class="btn btn-default"><i class="ico-plus"></i> Add New Goods</a>
+                                <a  href='{{url('admin/addGoods')}}' type="button" class="btn btn-default font"><i class="ico-plus"></i>添加新的展览</a>
                             </div>
 						</div>
 					</div>
@@ -72,14 +72,13 @@
 								<div class=" widget-block">
 									<div class="page-header">
 										<h2 class="font">修改展览信息</h2>
-										<p>
-											Please provide your name, email address (won't be published) and a comment
+										<p class="font">
+											在这里你可以任意修改展览信息
 										</p>
 									</div>
 									<form id="SignUpForm"  class="form-horizontal" action="{{route('admin.exhibit.update',$data->id)}}" method="post" >
                                         {{csrf_field()}}
 										{{ method_field('PUT') }}
-                                        
 										<div class="form-group">
 											<label class="col-lg-3 control-label font">展览主题</label>
 											<div class="col-lg-4">

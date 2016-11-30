@@ -16,5 +16,11 @@ class Poi extends Model
         return  $this->belongsTo("App\model\admin\Poi","project_id","id");
     }
 
+    // 一对多关联 项目表   反向代理
+    public function exhibit(){
+        return  $this->belongsTo("App\model\admin\Exhibit","exhibit_id","id");
+    }
+
+
 }
 	
