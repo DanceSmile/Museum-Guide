@@ -78,6 +78,14 @@ Route::group(["prefix"=>"index","namespace"=>"Index"],function(){
 
 });
 
+//添加前台群组路由
+Route::group(["prefix"=>"api","namespace"=>"Index"],function(){
+
+    Route::any("info","IndexController@info");
+
+});
+
+
 //载入登陆模板
 Route::get("/admin","Admin\LoginController@login")->name("login");
 //判断用户登陆规则
@@ -89,7 +97,7 @@ Route::get("/loginout","Admin\LoginController@loginout");
 
 
 // 默认首页
-Route::get("/","index\IndexController@index");
+Route::get("/","Index\IndexController@index");
 
 
 
